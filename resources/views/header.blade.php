@@ -52,13 +52,23 @@
                     </li>
                     <li>
                         <a href="#">about us</a>
-                    </li> 
+                    </li>
+                    @if(!(\Auth::user())) 
                     <li class="log_sign">
                     	<a href="#">log in</a>
                     </li>
                     <li class="log_sign sign_up">
-                    	<a href="#">Sign Up</a>
+                    	<a href="{{ url('/signup') }}">Sign Up</a>
                     </li>
+                    @endif
+                    @if((\Auth::user()))
+                    <li class="log_sign">
+                        <a href="#">{{ \Auth::user()->name }}</a>
+                    </li>
+                    <li class="log_sign sign_up">
+                        <a href="{{ url('/logout') }}">Log Out</a>
+                    </li>
+                    @endif
                     <li>
                     	<a href="" role="button" data-toggle="modal" data-target="#myModal_search"> <i class="fa fa-search" aria-hidden="true"></i> </a>
                     </li>  

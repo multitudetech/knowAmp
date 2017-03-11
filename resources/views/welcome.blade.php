@@ -62,7 +62,7 @@
                 <div class="ask_question">
                     <a href="#"> Ask Question </a>
                 </div>
- 
+                @if(!(\Auth::user()))
                 <!-- Form --> 
                 <div class="panel panel-default login_box">
                     <div class="panel-heading">
@@ -84,12 +84,12 @@
                             {!! Form::token() !!}
                             {!! Form::submit('Log In', array('class' => 'btn btn-default')) !!}
                             <!-- <button type="submit" class="btn btn-default">Log In</button> --> <span> or </span>
-                            <a href="#" class="btn btn-default register"> Register </a>
+                            <a href="{{ url('/signup') }}" class="btn btn-default register"> Register </a>
                             <p class="space10"> <a href="#"> Forget Password ? </a> </p>
                         {!! Form::close() !!}
                     </div>
                 </div>
-     
+                @endif
                 <!-- Progress Bars -->
                 <div class="panel panel-default">
                     <div class="panel-heading">

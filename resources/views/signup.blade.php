@@ -16,11 +16,11 @@
 						{!! Form::hidden('user_id', null) !!}
 						{!! Form::hidden('verification_code', null) !!}
 						{!! Form::token() !!}
-						<div class="alert alert-danger row" role="alert">
-							@if($errors->any())
-							<h4>{{$errors->first()}}</h4>
-							@endif
-						</div>
+						@if($errors->any())
+							<div class="alert alert-danger row" role="alert">
+								<h4>{{$errors->first()}}</h4>
+							</div>
+						@endif
 						<div class="row">
 							<div class="col-md-6 form-group">
 								<label> Name *</label>
