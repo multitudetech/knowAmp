@@ -18,3 +18,4 @@ Route::get('/signup', function () {
     return view('signup');
 });
 Route::resource('users', 'UsersController', ['only' => ['signup', 'store']]);
+Route::get('verify/{userid}/{verifyid}', ['uses' =>'UsersController@verify']);

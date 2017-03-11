@@ -76,9 +76,31 @@ class UsersController extends Controller
 	        }
     	}
     	else{
-    		$msg = 'Please confirm entered password';
+    		$msg = 'Password and confirm password does\'t match' ;
     	}
 
-        return back();
+        return back()->withErrors([$msg, 'The Message'])->withInput();
+    }
+
+    //verify email and user
+    public function verify($userid, $verifyid){
+        //get verification code from database
+        $verification_code = DB::table('users')
+        ->where('user_id', $userid)
+        ->value('verification_code');
+        //Check verified value 0 to 1 in database
+        if($verification_code==$verifyid){
+            //Change verified value 0 to 1 in database
+            DB::table('users')
+            ->where('user_id', $userid)
+            ->update(['verified' => 1]);
+
+            $msg = "User verified successfull";
+            //redirect to the login page
+            return redirect('/');
+        }
+        else{
+        	$msg = "User doesn't verified";
+        }
     }
 }
