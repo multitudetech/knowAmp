@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'nickname','email', 'password', 'contact_number', 'confirm_password', 'verification_code', 'user_id'
     ];
 
     /**
@@ -21,6 +21,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'confirm_password'
+    ];
+
+    public static $create_validation_rules = [
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required',
+        'confirm_password' => 'required',
+        'contact_number' => 'required'
     ];
 }
