@@ -31,4 +31,9 @@ class User extends Authenticatable
         'confirm_password' => 'required',
         'contact_number' => 'required'
     ];
+
+    public static $login_validation_rules = [
+      'email' => 'required|email|exists:users',
+      'password' => 'required',
+    ];
 }

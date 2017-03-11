@@ -19,3 +19,6 @@ Route::get('/signup', function () {
 });
 Route::resource('users', 'UsersController', ['only' => ['signup', 'store']]);
 Route::get('verify/{userid}/{verifyid}', ['uses' =>'UsersController@verify']);
+
+Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);
+Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
