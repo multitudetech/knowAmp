@@ -11,12 +11,6 @@
 		"guzzlehttp/guzzle": "~5.3|~6.0",
         "intervention/image": "^2.3"
     },
-    "repositories": [
-    {
-        "type": "composer",
-        "url": "https://packages.cartalyst.com"
-    }
-],
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
