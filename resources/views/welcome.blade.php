@@ -11,44 +11,40 @@
                 <div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <strong>knowAmp</strong> Community to know the new AMP Technology, Powered by Google itself! 
-                </div>      
+                </div>
+                @if($errors->any()&&$errors->first()!='')
+                    <div class="alert alert-danger row" role="alert">
+                        <h4>{{$errors->first()}}</h4>
+                    </div>
+                @endif      
             
                 <!-- Articles -->
                 <div class="row">
                     <div class="col-xs-12">
+                    <?php
+                        foreach ($data as $d) {
+                    ?>
                         <div class="question_box">
-                            <h2>Premier Niche Markets</h2>
-                            <p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
-                            <p><button class="btn btn-default">Read More</button></p>
-                            <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
+                            <h2>{{$d->question_title}}</h2>
+                            <p>{{$d->question_description}}</p>
+                            <?php 
+                                $question_id = $d->id;
+                                for($i=0; $i<5; $i++){
+                                    $question_id = base64_encode($question_id);
+                                }
+                            ?>
+                            <?php $view_path = url('/question/'.$question_id); ?>
+                            <p><a href="{{ $view_path }}"><button class="btn btn-default">Read More</button></a></p>
+                            <!-- <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p> -->
                             <ul class="list-inline review_visit ">
-                                <li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>Today</a></li>
-                                <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</a></li>
-                                <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 8 Views</a></li>
+                                <li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{$d->audit_created}}</a></li>
+                                <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> {{$d->answers}} Answers</a></li>
+                                <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{$d->views}} Views</a></li>
                             </ul>
-                        </div>              
-                        <div class="question_box">
-                            <h2>Premier Niche Markets</h2>
-                            <p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
-                            <p><button class="btn btn-default">Read More</button></p>
-                            <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
-                            <ul class="list-inline review_visit ">
-                                <li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>Today</a></li>
-                                <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</a></li>
-                                <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 8 Views</a></li>
-                            </ul>
-                        </div>              
-                        <div class="question_box">
-                            <h2>Premier Niche Markets</h2>
-                            <p>Phosfluorescently engage worldwide methodologies with web-enabled technology. Interactively coordinate proactive e-commerce via process-centric "outside the box" thinking. Completely pursue scalable customer service through sustainable potentialities.</p>
-                            <p><button class="btn btn-default">Read More</button></p>
-                            <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
-                            <ul class="list-inline review_visit ">
-                                <li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>Today</a></li>
-                                <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</a></li>
-                                <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 8 Views</a></li>
-                            </ul>
-                        </div>                      
+                        </div>
+                    <?php
+                        }
+                    ?>                     
                     </div>
                 </div>
             </div><!--/Center Column-->
@@ -60,7 +56,7 @@
                 <!-- Ask Question Button -->
 
                 <div class="ask_question">
-                    <a href="#"> Ask Question </a>
+                    <a href="{{ url('/askQuestion') }}"> Ask Question </a>
                 </div>
                 @if(!(\Auth::user()))
                 <!-- Form --> 

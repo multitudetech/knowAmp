@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><i class="fa fa-bolt" aria-hidden="true"></i> knowAmp </a>
+                <a class="navbar-brand" href="{{ url('/') }}"><i class="fa fa-bolt" aria-hidden="true"></i> knowAmp </a>
             </div>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
@@ -55,7 +55,7 @@
                     </li>
                     @if(!(\Auth::user())) 
                     <li class="log_sign">
-                    	<a href="#">log in</a>
+                    	<a href="{{ url('/login') }}">log in</a>
                     </li>
                     <li class="log_sign sign_up">
                     	<a href="{{ url('/signup') }}">Sign Up</a>
@@ -122,6 +122,8 @@
     
     <!-- Placeholder Images -->
     <script src="{{URL::asset('js/holder.min.js')}}"></script>
+
+    <script src="{{ URL::asset('js/jquery.cleditor.min.js') }}"></script>
 
     <script type="text/javascript">
         $('#myModal_search').on('shown.bs.modal', function (e) {
