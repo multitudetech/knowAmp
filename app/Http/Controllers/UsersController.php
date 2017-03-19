@@ -15,7 +15,8 @@ use Storage;
 class UsersController extends Controller
 {
 	public function signup(){
-		return view('signup');
+		$title = "KnowAmp | SignUp";
+		return view('signup', compact('title'));
 	}
 
 	public function store(Request $request)
@@ -72,7 +73,7 @@ class UsersController extends Controller
 	    		});
 
 	            $msg = 'We have send you verification email please verify it';
-	          //return redirect()->route('login');
+	          	return redirect()->route('login')->withErrors([$msg]);
 	        }
     	}
     	else{

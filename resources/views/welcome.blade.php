@@ -26,7 +26,8 @@
                     ?>
                         <div class="question_box">
                             <h2>{{$d->question_title}}</h2>
-                            <p>{{$d->question_description}}</p>
+                            <!-- <p>{{$d->question_description}}</p> -->
+                            <div style="max-height: 100px; overflow: hidden;"><?php echo $d->question_description; ?></div>
                             <?php 
                                 $question_id = $d->id;
                                 for($i=0; $i<5; $i++){

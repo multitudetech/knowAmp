@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route as RouteController;
 class QuestionController extends Controller
 {
 	public function askQuestion(){
-		return view('askQuestion');
+		$title = "knowAmp | Ask your question";
+		return view('askQuestion')->with('title', $title);
 	}
 
 	public function handleaskQuestion(Request $request){
@@ -28,6 +29,7 @@ class QuestionController extends Controller
 	}
 
 	public function listQuestions(Route $route){
+		$title = 'knowAmp | Most asked AMPs questions';
 		$currentPath= RouteController::getFacadeRoot()->current()->uri();
 
 		if($currentPath=='login'){
@@ -44,7 +46,7 @@ class QuestionController extends Controller
 			->orderBy('views', 'desc')
 			->get();
 
-		return view('welcome')->with('data', $data)->withErrors([$msg]);
+		return view('welcome', compact('title'))->with('data', $data)->withErrors([$msg]);
 
 	}
 
@@ -55,8 +57,17 @@ class QuestionController extends Controller
 		}
 		//increse view count
 		DB::statement('call questionViewCount('.$id.')');
+
+		$data = DB::table('questions')
+			->join('users','questions.user_id', '=', 'users.user_id')
+			->join('answers', 'answers.questions_id', '=', 'questions.id')
+			->select('questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created AS question_created_date', 'answers.id', 'answers.answer', 'answers.audit_created AS answer_created_date')
+			->where('questions.id', '=', $id)
+			->get();
+
+		$title = 'knowAmp | '.$data[0]->question_title;
 		
-		//return view('detailedQuestions');
+		return view('detailedQuestions', compact('title'))->with('data', $data);
 	}
 
 }

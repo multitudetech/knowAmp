@@ -23,6 +23,10 @@
 									<div class="custom_ans_box space20">
 										<!-- <img src="img/placeholder_edit.jpg" class="img-responsive center-bolck wid100"> -->
 										{!! Form::textarea('question_description', null, array('class' => 'form-control cleditor', 'id' => 'textarea2', 'rows' => '3')) !!}
+										<!-- {!! Form::textarea('question_description', null, array('class' => 'form-control cleditor', 'id' => 'textarea2', 'rows' => '3')) !!} -->
+										<!-- <div id="txtEditor"></div> -->
+										<!-- <textarea id="txtEditor" name="txtEditor"></textarea>
+										<textarea id="txtEditorContent" name="txtEditorContent" hidden=""></textarea> -->
 									</div>
 								</div>
 							</div>

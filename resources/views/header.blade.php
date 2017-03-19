@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title> knowAmp | Sign Up </title>
+    <title><?php print_r($title); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -16,6 +16,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Source+Sans+Pro:400,600" rel="stylesheet">
     <link href="{{URL::asset('css/custom.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/editor.css')}}" type="text/css" rel="stylesheet"/>
+    <!-- <link id="base-style" href="{{ URL::asset('css/style.css') }}" rel="stylesheet"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -113,6 +115,10 @@
     
     <!-- jQuery -->
     <script src="{{URL::asset('js/jquery-1.11.3.min.js')}}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.0.0.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script> -->
+    <!-- <script src="{{ URL::asset('js/jquery-1.9.1.min.js') }}"></script> -->
+    <script src="{{ URL::asset('js/jquery-migrate-1.0.0.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
@@ -129,6 +135,13 @@
         $('#myModal_search').on('shown.bs.modal', function (e) {
             $('.modal-open').css('padding-right', '0');
             console.log('pass');
+        });
+    </script>
+    <!-- <script src="{{ URL::asset('js/editor.js')}}"></script> -->
+    <!-- Display editor -->
+    <script type="text/javascript">
+        $(document).ready( function() {
+            //$('.cleditor').cleditor();                    
         });
     </script>
     
