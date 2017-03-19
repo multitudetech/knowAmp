@@ -35,6 +35,7 @@ class QuestionController extends Controller
             'question_description' => $data['question_description']
         );            
 
+        //send mail 
         Mail::send('emailAskedQuestion', $mail_data, function ($message) use ($data) {
 
         $message->from('knowampinfo@gmail.com', 'knowAmp');
@@ -42,6 +43,17 @@ class QuestionController extends Controller
         $message->to(\Auth::user()->email)->subject('Question posted successfully');
 
 		});
+        $title = 'knowAmp | Most asked AMPs questions';
+        $msg = 'Question posted successfully!';
+
+        $data = DB::table('questions')
+			->join('users','questions.user_id', '=', 'users.user_id')
+			->select('questions.id', 'questions.user_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created')
+			->limit(10)
+			->orderBy('views', 'desc')
+			->get();
+        
+		return view('welcome', compact('title'))->with('data', $data)->withErrors([$msg]);		
 	}
 
 	public function listQuestions(Route $route){
@@ -76,7 +88,7 @@ class QuestionController extends Controller
 
 		$data = DB::table('questions')
 			->join('users','questions.user_id', '=', 'users.user_id')
-			->join('answers', 'answers.questions_id', '=', 'questions.id')
+			->leftjoin('answers', 'answers.questions_id', '=', 'questions.id')
 			->select('questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created AS question_created_date', 'answers.id', 'answers.answer', 'answers.audit_created AS answer_created_date')
 			->where('questions.id', '=', $id)
 			->get();

@@ -44,6 +44,7 @@
 									</div>
 								</div>
 							</div>
+							<?php if($data[0]->answers>0){ ?>
 							<div class="row">
 								<div class="col-md-12">
 									<p class="ans_count"> {{ $data[0]->answers }} Answers </p>
@@ -87,6 +88,7 @@
 									</div> -->
 								</div>
 							</div>
+							<?php } ?>
 						</div>				
 					</div>
 				</div>
@@ -99,7 +101,7 @@
 				<!-- Ask Question Button -->
 
 				<div class="ask_question">
-					<a href="#myModal_ask" data-toggle="modal" data-target="#myModal_ask"> Ask Question </a>
+					<a href="{{ url('/askQuestion') }}"> Ask Question </a>
 				</div>
  				@if(!(\Auth::user()))
 				<!-- Form --> 
