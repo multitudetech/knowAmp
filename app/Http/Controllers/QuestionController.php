@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use DB;
+use Mail;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route as RouteController;
 
@@ -26,6 +27,21 @@ class QuestionController extends Controller
             'question_description' => $data['question_description'],
             'user_id' => \Auth::user()->user_id
         ]);
+
+        $send_email = \Auth::user()->email;
+
+        $mail_data = array(
+            'question_title' => $data['question_title'],
+            'question_description' => $data['question_description']
+        );            
+
+        Mail::send('emailAskedQuestion', $mail_data, function ($message) use ($data) {
+
+        $message->from('knowampinfo@gmail.com', 'knowAmp');
+
+        $message->to(\Auth::user()->email)->subject('Question posted successfully');
+
+		});
 	}
 
 	public function listQuestions(Route $route){
