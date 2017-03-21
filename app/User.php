@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'nickname','email', 'password', 'contact_number', 'confirm_password', 'verification_code', 'user_id', 'question_title', 'question_description', 'txtEditorContent', 'txtEditor'
+        'name', 'nickname','email', 'password', 'contact_number', 'confirm_password', 'verification_code', 'user_id', 'question_title', 'question_description', 'txtEditorContent', 'txtEditor', 'answer_description', 'question_id'
     ];
 
     /**
@@ -40,5 +40,10 @@ class User extends Authenticatable
     public static $ask_question_validation_rules = [
         'question_title' => 'required',
         'question_description' => 'required'
+    ];
+
+    public static $answer_validate_rules = [
+        'answer_description' => 'required',
+        'question_id' => 'required'
     ];
 }

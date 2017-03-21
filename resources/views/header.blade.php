@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Source+Sans+Pro:400,600" rel="stylesheet">
     <link href="{{URL::asset('css/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/editor.css')}}" type="text/css" rel="stylesheet"/>
-    <!-- <link id="base-style" href="{{ URL::asset('css/style.css') }}" rel="stylesheet"> -->
+    <link id="base-style" href="{{ URL::asset('css/jquery.cleditor.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -148,11 +148,11 @@
             console.log('pass');
         });
     </script>
-    <!-- <script src="{{ URL::asset('js/editor.js')}}"></script> -->
+    <script src="{{ URL::asset('js/editor.js')}}"></script>
     <!-- Display editor -->
     <script type="text/javascript">
         $(document).ready( function() {
-            //$('.cleditor').cleditor();                    
+            $('.cleditor').cleditor();                    
         });
     </script>
     

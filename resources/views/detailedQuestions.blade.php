@@ -11,7 +11,13 @@
 				<div class="alert alert-success alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<strong>knowAmp</strong> Community to know the new AMP Technology, Powered by Google itself! 
-				</div>		
+				</div>
+
+				@if($errors->any()&&$errors->first()!='')
+                    <div class="alert alert-danger row" role="alert">
+                        <h4>{{$errors->first()}}</h4>
+                    </div>
+                @endif		
 			
 				<!-- Articles -->
 				<div class="row">
@@ -44,9 +50,9 @@
 									</div>
 								</div>
 							</div>
-							<?php if($data[0]->answers>0){ ?>
 							<div class="row">
 								<div class="col-md-12">
+								<?php if($data[0]->answers>0){ ?>
 									<p class="ans_count"> {{ $data[0]->answers }} Answers </p>
 									<?php
 				                        foreach ($data as $d) {
@@ -86,9 +92,27 @@
 											</div>
 										</div>
 									</div> -->
+								<?php } ?>
+								<p class="ans_count"> Your Answer </p>
+								<?php 
+	                                $question_id = $data[0]->question_id;
+	                                for($i=0; $i<5; $i++){
+	                                    $question_id = base64_encode($question_id);
+	                                }
+	                            ?>
+								{!! Form::open(array('route' => 'handleAnswer')) !!}
+								<div class="row">
+									<div class="col-md-12">
+										<div class="custom_ans_box">
+											<input type="hidden" name="question_id" value="{{$question_id}}">
+											{!! Form::textarea('answer_description', null, array('class' => 'form-control cleditor', 'id' => 'textarea2', 'rows' => '3')) !!}
+										</div>
+									</div>
+								</div>
+								<button type="submit" name="post_answer" class="btn btn-default btn-primary space20">Post Your Answer</button>
+								{!! Form::close() !!}
 								</div>
 							</div>
-							<?php } ?>
 						</div>				
 					</div>
 				</div>
