@@ -1,0 +1,649 @@
+/*==========================================================*/
+/*Different Font Families*/
+/*==========================================================*/
+@font-face {
+    font-family: 'copperplate-gothic-light';
+    src: url(../fonts/copperplate-gothic-light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'PeignotLTStd-Bold';
+    src: url('../fonts/Peignot/PeignotLTStd-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PeignotLTStd-Demi';
+    src: url('../fonts/Peignot/PeignotLTStd-Demi.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PeignotLTStd-Light';
+    src: url('../fonts/Peignot/PeignotLTStd-Light.eot');
+    src: url('../fonts/Peignot/PeignotLTStd-Light.otf') format('opentype'),
+    url('../fonts/Peignot/PeignotLTStd-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'slick';
+    src: url('../fonts/slick.eot');
+    src: url('../fonts/slick.svg') format('svg'),
+    url('../fonts/slick.ttf') format('truetype'),
+    url('../fonts/slick.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-moz-selection { 
+    background: #fcf8e3;
+}
+
+::selection {
+    background: #fcf8e3;
+}
+
+::-webkit-selection {
+    background: #fcf8e3;
+}
+
+/*===============================================================================================================================================================================*/
+/*============================================================================Common Css Files===================================================================================*/
+/*===============================================================================================================================================================================*/
+
+/*==============================================================*/
+/*Top Space with Margin*/
+/*==============================================================*/
+.space0 {
+    margin-top: 0px !important;
+    margin-bottom: 0 !important
+}
+
+.space2 {
+    margin-top: 2px !important;
+}
+
+.space5 {
+    margin-top: 5px !important;
+}
+
+.space10 {
+    margin-top: 10px !important;
+}
+
+.space24 {
+    margin-top: 24px !important;
+}
+
+.space15 {
+    margin-top: 15px !important;
+}
+
+.space20 {
+    margin-top: 20px !important;
+}
+
+.space25 {
+    margin-top: 25px !important;
+}
+
+.space30 {
+    margin-top: 30px !important;
+}
+
+.space35 {
+    margin-top: 35px !important;
+}
+
+.space40 {
+    margin-top: 40px !important;
+}
+
+.space50 {
+    margin-top: 50px !important;
+}
+
+.space60 {
+    margin-top: 60px !important;
+}
+
+.space70 {
+    margin-top: 70px !important;
+}
+
+.space80 {
+    margin-top: 80px !important;
+}
+
+.space90 {
+    margin-top: 90px !important;
+}
+
+.space100 {
+    margin-top: 100px !important;
+}
+
+.space110 {
+    margin-top: 110px !important;
+}
+
+.space-5 {
+    margin-top: -5px !important;
+}
+
+/*===================================================================*/
+/*Font-size and weight*/
+/*===================================================================*/
+.fsize10 {
+    font-size: 10px !important;
+}
+
+.fsize12 {
+    font-size: 12px !important;
+}
+
+.fsize14 {
+    font-size: 14px !important;
+}
+
+.fsize16 {
+    font-size: 16px !important;
+}
+
+.fsize18 {
+    font-size: 18px !important;
+}
+
+.fsize20 {
+    font-size: 20px !important;
+}
+
+.fsize22 {
+    font-size: 22px !important;
+}
+
+.fsize24 {
+    font-size: 24px !important;
+}
+
+.fsize26 {
+    font-size: 26px !important;
+}
+
+.fsize28 {
+    font-size: 28px !important;
+}
+
+.fsize30 {
+    font-size: 30px !important;
+}
+
+.fsize32 {
+    font-size: 32px !important;
+}
+
+.fsize34 {
+    font-size: 34px !important;
+}
+
+.fsize36 {
+    font-size: 36px !important;
+}
+
+.fsize38 {
+    font-size: 38px !important;
+}
+
+.fsize40 {
+    font-size: 40px !important;
+}
+
+.fsize42 {
+    font-size: 42px !important;
+}
+
+.fsize44 {
+    font-size: 44px !important;
+}
+
+.fsize46 {
+    font-size: 46px !important;
+}
+
+.fsize48 {
+    font-size: 48px !important;
+}
+
+.fsize50 {
+    font-size: 50px !important;
+}
+
+.f100 {
+    font-weight: 100;
+}
+
+.f200 {
+    font-weight: 200;
+}
+
+.f300 {
+    font-weight: 300;
+}
+
+.f400 {
+    font-weight: 400;
+}
+
+.f500 {
+    font-weight: 500;
+}
+
+.f600 {
+    font-weight: 600;
+}
+
+.f700 {
+    font-weight: 700;
+}
+
+.f900 {
+    font-weight: 900;
+}
+
+/*====================================================================*/
+/*Width*/
+/*=====================================================================*/
+
+.wid30 {
+    width: 30%;
+}
+
+.wid40 {
+    width: 40%;
+}
+
+.wid50 {
+    width: 50%;
+}
+
+.wid60 {
+    width: 60%;
+}
+
+.wid70 {
+    width: 70%;
+}
+
+.wid80 {
+    width: 80%;
+}
+
+.wid90 {
+    width: 90%;
+}
+
+.wid100 {
+    width: 100%;
+}
+
+/*===================Change a style of placeholder====================*/
+
+::-webkit-input-placeholder {
+}
+
+::-moz-placeholder {
+}
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+}
+
+input:-moz-placeholder {
+}
+
+.anti-row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+/*==================================================================*/
+
+/*==============================================================================================================================================================================*/
+/*=======================================================================Common Css Ends Here===================================================================================*/
+/*==============================================================================================================================================================================*/
+
+/*===========================================================*/
+/*Css on HTML Tags*/
+/*============================================================*/
+
+body {
+    padding-top: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+p, ul, ol {
+    margin-bottom: 0;
+}
+
+#side-carousel img {
+    margin: 0 auto;
+    }
+ 
+.small-print {
+    background-color: #fff;
+    padding: 30px 0;
+}
+
+.feature,
+.page-intro,
+.article-intro,
+.small-print {
+    text-align: center;
+}
+
+/* header css */
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+    background: #080808;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 0px 0;
+    border: 0px;
+    color: #fff;
+}
+
+.navbar-toggle {
+    border: 1px solid #fff;
+}
+
+.navbar-toggle .icon-bar {
+    background: #fff;
+}
+
+.navbar-fixed-top a {
+    color: #fff;
+}
+
+.navbar-fixed-top.affix {
+    padding: 0;
+    transition: padding 0.3s linear;
+}
+
+.nav>li>a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    margin-left: 10px;
+}
+
+.nav>li.log_sign>a {
+    /* margin-left:0; */
+}
+
+.nav>li.log_sign.sign_up>a {
+    background: #337ab7;
+    padding: 8px 15px;
+    margin: 7px 0;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.nav>li>a:hover,
+.nav>li>a:focus {
+    color: #fff;
+    background: #333;
+    outline: 0;
+}
+
+.search_modal {
+    padding-right: 0 !important;
+}
+
+.search_modal,
+.search_modal .modal-content {
+    height: 100%;
+    width: 100%;
+}
+
+.search_modal .modal-dialog {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.search_modal .modal-content {
+    border: 0;
+    border-radius: 0;
+    background: #eee;
+}
+
+.main-search {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.main-search .form-group {
+    position: relative;
+}
+
+.main-search .form-control {height: 55px;box-shadow: none;border: 1px solid #ddd;margin-top: 20px;padding: 6px 23px;font-size: 19px;}
+
+.main-search .btn {
+    background: transparent;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 22px;
+}
+
+.search_title {
+    text-align: center;
+    font-size: 31px;
+    margin-top: 100px;
+}
+
+.search_title.text-left {
+    text-align: left;
+}
+
+.close-modal {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    font-size: 40px;
+    line-height: 1;
+}
+
+/* header css ends */
+
+
+
+/* Login Box */
+
+.login_box .btn-default {
+    margin-right: 10px;
+}
+
+.login_box .btn-default.register {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/* Ends */
+
+.main_content {
+    padding: 20px 0 70px;
+}
+
+.ask_question>a{
+    border: 1px solid #337ab7;
+    border-radius: 3px;
+    padding: 6px 12px;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    background: #337ab7;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s linear;
+}
+
+.ask_question>a:hover,
+.ask_question>a:focus {
+    text-decoration: none;
+    background: transparent;
+    color: #337ab7
+}
+
+.why_amp {
+    padding: 60px 0;
+    background: #eee;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+.question_box {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.question_box .btn-default {
+    margin-top: 20px;
+}
+
+.main_que_asked {
+    background: rgba(238, 238, 238, 0.68);
+    padding: 9px 15px;
+    font-size: 24px;
+    font-family: 'Roboto'
+}
+
+.rate_box {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.rate_box li>a {
+    display: block;
+    padding: 2px 0;
+    /* height: 35px; */
+    /* width: 35px; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 21px;
+}
+
+.que_ans_box {
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    min-height: 210px;
+}
+
+.rate_box li:first-child>a, 
+.rate_box li:nth-child(3)>a{
+    /* border: 1px solid #ddd; */
+    /* border-radius: 50%; */
+}
+
+.rate_box li:last-child>a {
+    font-size: 21px;
+}
+
+.sub_desc_asked {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.ans_count {
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.review_visit {
+    margin-top: 20px;  
+}
+ 
+.review_visit li>a .fa{
+    margin-right: 5px;  
+}
+
+.footer-blurb-item {
+    padding: 15px 25px;
+    margin-top: 20px;
+}
+
+.footer-blurb-item h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.ques_ask_box .main-search {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* sign up box Starts */
+
+.signup_box {
+    padding: 60px 0;
+}
+
+.signup_box .title {
+    font-size: 22px;
+    text-transform: none;
+    margin-top: 0;
+}
+
+.middle_form {
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 15px;
+    background: #f2f2f2;
+}
+
+.middle_form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.middle_form .form-control {
+    height: 45px;
+    padding: 12px;
+    font-size: 15px;
+    letter-spacing: 0.75px;
+
+}
+/* sign up box Ends */

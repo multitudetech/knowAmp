@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost:8081/knowAmp/public'),
+    'url' => env('APP_URL', 'http://localhost:8081/knowAmp'),
 
     /*
     |--------------------------------------------------------------------------
