@@ -146,7 +146,7 @@
 							</div>
 							<button type="submit" class="btn btn-default">Log In</button> <span> or </span>
 							<a href="#" class="btn btn-default register"> Register </a>
-							<p class="space10"> <a href="#"> Forget Password ? </a> </p>
+							<p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forget Password ? </a> </p>
 						</form>
 					</div>
 				</div>

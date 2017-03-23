@@ -20,6 +20,9 @@ Route::get('/signup', function () {
     return view('signup', compact('title'));
 });
 Route::get('verify/{userid}/{verifyid}', ['uses' =>'UsersController@verify']);
+Route::post('/forgetPassword', ['as' => 'forgetPassword', 'uses' => 'UsersController@forgetPassword']);
+Route::get('resetPassword/{verifyid}/', ['uses' =>'UsersController@resetPassword']);
+Route::post('/handleResetPassword', ['as' => 'handleResetPassword', 'uses' =>'UsersController@handleResetPassword']);
 
 Route::group(['middleware' => ['web']], function () {
 	Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);

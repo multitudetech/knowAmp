@@ -104,4 +104,54 @@ class UsersController extends Controller
         	$msg = "User doesn't verified";
         }
     }
+
+    public function forgetPassword(Request $request){
+		$this->validate($request, User::$forget_password_validation_rules);      
+   		$data = $request->only('email'); 
+   		
+   		$verification = DB::table('users')   	
+   			->select('verification_code')
+   			->where('email', '=', $data['email'])
+   			->get();
+   		
+   		$mail_data['verification_code'] = $verification[0]->verification_code;
+
+   		//send mail 
+        Mail::send('reSetPassword', $mail_data, function ($message) use ($data) {
+
+	        $message->from('knowampinfo@gmail.com', 'knowAmp');
+
+	        $message->to($data['email'])->subject('Reset password');
+    	});
+
+    	return back();
+    }
+
+    public function resetPassword($verifyid){
+    	$title = "KnowAmp | Reset password";
+    	$data['verifyid'] = $verifyid;
+
+    	return view('resetPass', compact('title', 'data'));
+    }
+
+    public function handleResetPassword(Request $request){
+    	$this->validate($request, User::$handle_reset_validation_rules);      
+   		$data = $request->only('password', 'confirm_password', 'verification_code');
+
+   		if($data['password']==$data['confirm_password']){
+   			$password = bcrypt($data['password']);
+
+   			DB::table('users')
+	            ->where('verification_code', $data['verification_code'])
+	            ->update(['password' => $password]);
+
+	        $msg = "Password updated successfully!";
+	        session(['msg' => $msg]);
+	        return redirect('/');
+   		}
+   		else{
+   			$msg = "Password and confirm password doesn't match";
+   			return back()->withErrors([$msg]);
+   		}
+    }
 }

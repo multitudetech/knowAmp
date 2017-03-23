@@ -12,8 +12,18 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <strong>knowAmp</strong> Community to know the new AMP Technology, Powered by Google itself! 
                 </div>
+                <?php
+                    if(session('msg')!=''){
+                ?>
+                        <div class="alert alert-danger" role="alert">
+                            <h4>{{session('msg')}}</h4>
+                        </div>
+                <?php
+                        session(['msg' => '']);
+                    }
+                ?>
                 @if($errors->any()&&$errors->first()!='')
-                    <div class="alert alert-danger row" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         <h4>{{$errors->first()}}</h4>
                     </div>
                 @endif      
@@ -82,7 +92,7 @@
                             {!! Form::submit('Log In', array('class' => 'btn btn-default')) !!}
                             <!-- <button type="submit" class="btn btn-default">Log In</button> --> <span> or </span>
                             <a href="{{ url('/signup') }}" class="btn btn-default register"> Register </a>
-                            <p class="space10"> <a href="#"> Forget Password ? </a> </p>
+                            <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forget Password ? </a> </p>
                         {!! Form::close() !!}
                     </div>
                 </div>

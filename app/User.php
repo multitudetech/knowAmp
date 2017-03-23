@@ -46,4 +46,14 @@ class User extends Authenticatable
         'answer_description' => 'required',
         'question_id' => 'required'
     ];
+
+    public static $forget_password_validation_rules = [
+        'email' => 'required|email|exists:users'
+    ];
+
+    public static $handle_reset_validation_rules = [
+        'password' => 'required',
+        'confirm_password' => 'required',
+        'verification_code' => 'required'
+    ];
 }

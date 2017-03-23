@@ -123,6 +123,31 @@
         </div>
     </footer>
 
+     <!-- Reset Modal -->
+    <div class="modal search_modal fade" id="myModal_reset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3 class="search_title"> No worries, we have your back !!   </h3>
+                    {!! Form::open(array('route' => 'forgetPassword', 'class' => 'main-search main-forget')) !!}
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Registered Email Address">
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" name="forgetPassword" class="btn btn-primary" value="Reset Password">
+                        </div>
+
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+
+                        <p class="note">
+                            Note: After Entering your email address here, please check your email for your password reset link. <br><br> Thanks for being with knowAmp.com Community.
+                        </p>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+
     
     <!-- jQuery -->
     <script src="{{URL::asset('js/jquery-1.11.3.min.js')}}"></script>
