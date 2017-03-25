@@ -61,12 +61,12 @@
 					<div class="panel-heading">
 						<h3 class="panel-title fa-fa-title">
 							<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-							Some Tips to ask your question.
+							Some Tips before you ask a question.
 						</h3>
 					</div>
 					<div class="panel-body">
-						<p> This is the specific wesite for AMP community only. Please ask questions regarding Amp only. <br><br> You can ask questions regarding any defficulty you had in converting your existing pages in amp pages or find any difficulties in making/validating/etc. Amp pages. </p>
-						<h4 class="space20 text-right">- knowAmp</h4>
+						<p> This is the specific wesite for AMP community only. Please ask questions regarding Amp only. <br><br> Your Question may have an answer? History is Alive..<br><br> Is it relavent to Users? </p>
+						<h4 class="space20 text-right">- KnowAmp</h4>
 					</div>
 				</div>				
 	 
@@ -125,7 +125,7 @@
 		    	<div class="row">
 		    		<div class="col-md-10 col-md-offset-1">
 				      	<div class="modal-body ques_ask_box">
-				      		<h3 class="search_title text-left"> Welcome to knowAmp  </h3>
+				      		<h3 class="search_title text-left"> Welcome to KnowAmp  </h3>
 				      		<p class="space20">
 				      			We’d love to help you, but the reality is that not every question gets answered. To improve your chances, here are some tips:<br>
 								Search, and research
@@ -149,33 +149,4 @@
 	    </div>
   	</div>
 </div>
-
-<section class="why_amp">
-	
-	<div class="footer-blurb">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h3 class="title"> why you must use amp? </h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 footer-blurb-item">
-					<h3><span class="glyphicon glyphicon-text-size"></span> Dynamic</h3>
-					<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-				</div>
-				<div class="col-sm-4 footer-blurb-item">
-					<h3><span class="glyphicon glyphicon-wrench"></span> Efficient</h3>
-					<p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. </p>
-				</div>
-				<div class="col-sm-4 footer-blurb-item">
-					<h3><span class="glyphicon glyphicon-paperclip"></span> Complete</h3>
-					<p>Professionally cultivate one-to-one customer service with robust ideas. Completely synergize resource taxing relationships via premier niche markets. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-				</div>
-
-			</div>
-			<!-- /.row -->	
-		</div>
-    </div>
-</section>
 @endsection

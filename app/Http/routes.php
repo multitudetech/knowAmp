@@ -16,7 +16,7 @@ Route::get('/index', ['as' => 'index', 'uses' => 'QuestionController@listQuestio
 Route::get('/login', ['as' => 'login', 'uses' => 'QuestionController@listQuestions']);
 Route::get('/question/{question_id}', ['uses' => 'QuestionController@detailedQuestions']);
 Route::get('/signup', function () {
-	$title = "knowAmp | Sign Up";
+	$title = "KnowAmp | Sign Up";
     return view('signup', compact('title'));
 });
 Route::get('verify/{userid}/{verifyid}', ['uses' =>'UsersController@verify']);

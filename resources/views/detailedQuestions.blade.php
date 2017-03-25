@@ -10,7 +10,7 @@
 				<!-- Alert -->
 				<div class="alert alert-success alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<strong>knowAmp</strong> Community to know the new AMP Technology, Powered by Google itself! 
+					<strong>KnowAmp</strong> Community to know the new AMP Technology, Powered by Google itself! 
 				</div>
 
 				@if($errors->any()&&$errors->first()!='')
@@ -191,32 +191,5 @@
 		</div>
 
 	</div><!--/container-fluid-->
-</section>
-<section class="why_amp">    
-    <div class="footer-blurb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="title"> why you must use amp? </h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 footer-blurb-item">
-                    <h3><span class="glyphicon glyphicon-text-size"></span> Dynamic</h3>
-                    <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-                </div>
-                <div class="col-sm-4 footer-blurb-item">
-                    <h3><span class="glyphicon glyphicon-wrench"></span> Efficient</h3>
-                    <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. </p>
-                </div>
-                <div class="col-sm-4 footer-blurb-item">
-                    <h3><span class="glyphicon glyphicon-paperclip"></span> Complete</h3>
-                    <p>Professionally cultivate one-to-one customer service with robust ideas. Completely synergize resource taxing relationships via premier niche markets. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-                </div>
-
-            </div>
-            <!-- /.row -->  
-        </div>
-    </div>
 </section>
 @endsection

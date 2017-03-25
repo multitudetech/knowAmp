@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h3 class="title">
-						Register with knowAmp to Join the community
+						Register with KnowAmp to Join the community
 					</h3>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<p> <i class="fa fa-bolt" aria-hidden="true"></i> &nbsp; By registering, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> of knowAmp.  &nbsp; <i class="fa fa-bolt" aria-hidden="true"></i></p>
+								<p> <i class="fa fa-bolt" aria-hidden="true"></i> &nbsp; By registering, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> of KnowAmp.  &nbsp; <i class="fa fa-bolt" aria-hidden="true"></i></p>
 								<button type="submit" class="btn btn-primary fsize16 space10">Register Now</button>
 							</div>
 						</div>
@@ -68,34 +68,5 @@
 				</div>
 			</div> -->
 		</div>
-	</section>
-
-	<section class="why_amp">
-		
-		<div class="footer-blurb">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="title"> why you must use amp? </h3>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-4 footer-blurb-item">
-						<h3><span class="glyphicon glyphicon-text-size"></span> Dynamic</h3>
-						<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-					</div>
-					<div class="col-sm-4 footer-blurb-item">
-						<h3><span class="glyphicon glyphicon-wrench"></span> Efficient</h3>
-						<p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. </p>
-					</div>
-					<div class="col-sm-4 footer-blurb-item">
-						<h3><span class="glyphicon glyphicon-paperclip"></span> Complete</h3>
-						<p>Professionally cultivate one-to-one customer service with robust ideas. Completely synergize resource taxing relationships via premier niche markets. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
-					</div>
-
-				</div>
-				<!-- /.row -->	
-			</div>
-        </div>
 	</section>
 @endsection

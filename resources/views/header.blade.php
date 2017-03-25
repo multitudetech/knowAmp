@@ -18,6 +18,7 @@
     <link href="{{URL::asset('css/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/editor.css')}}" type="text/css" rel="stylesheet"/>
     <link id="base-style" href="{{ URL::asset('css/jquery.cleditor.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('css/prism.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,7 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}"><i class="fa fa-bolt" aria-hidden="true"></i> knowAmp </a>
+                <a class="navbar-brand" href="{{ url('/') }}"><i class="fa fa-bolt" aria-hidden="true"></i> KnowAmp </a>
             </div>
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbar">
@@ -97,7 +98,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h3 class="search_title"> Search knowAmp  </h3>
+                    <h3 class="search_title"> Where have you been stuck at?  </h3>
                     <form class="main-search">
                         <div class="form-group">
                             <input type="search" name="main-search" class="form-control" placeholder="Enter Your Query Here...">
@@ -106,6 +107,7 @@
 
                         <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                     </form>
+                    <h2 class="search_title"> There is nothing called <span class="blue_clr">Problem</span>,<br>It's just an absence of an idea to find the <span class="blue_clr">Solution</span>.  </h2>
                 </div>
             </div>
         </div>
@@ -113,12 +115,35 @@
 
     @yield('content')
 
+    <section class="why_amp">
+        <div class="footer-blurb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title"> DIRECTORS PITCH </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 footer-blurb-item">
+                        <h3>Dais</h3>
+                        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                    </div>
+                    <div class="col-sm-6 footer-blurb-item">
+                        <h3>Speakers & Listeners</h3>
+                        <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. </p>
+                    </div>
+                </div>
+                <!-- /.row -->  
+            </div>
+        </div>
+    </section>
+
     <footer>
         
         <div class="small-print">
             <div class="container">
                 <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-                <p>Copyright &copy; knowAmp.com 2017 </p>
+                <p>Copyright &copy; KnowAmp.com 2017 </p>
             </div>
         </div>
     </footer>
@@ -128,7 +153,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h3 class="search_title"> No worries, we have your back !!   </h3>
+                    <h3 class="search_title"> No worries, cookies are still in the box !!   </h3>
                     {!! Form::open(array('route' => 'forgetPassword', 'class' => 'main-search main-forget')) !!}
                         <div class="form-group">
                             <input type="text" name="email" class="form-control" placeholder="Registered Email Address">
@@ -140,7 +165,7 @@
                         <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
 
                         <p class="note">
-                            Note: After Entering your email address here, please check your email for your password reset link. <br><br> Thanks for being with knowAmp.com Community.
+                            Note: After Entering your email address here, please check your inbox for your password reset link. <br><br> Thanks for being with KnowAmp.com Community.
                         </p>
                     {!! Form::close() !!}
                 </div>
@@ -164,6 +189,8 @@
     
     <!-- Placeholder Images -->
     <script src="{{URL::asset('js/holder.min.js')}}"></script>
+
+    <script src="{{URL::asset('js/prism.js')}}" data-manual></script>
 
     <script src="{{ URL::asset('js/jquery.cleditor.min.js') }}"></script>
 

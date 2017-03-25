@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route as RouteController;
 class QuestionController extends Controller
 {
 	public function askQuestion(){
-		$title = "knowAmp | Ask your question";
+		$title = "KnowAmp | Ask your question";
 		return view('askQuestion')->with('title', $title);
 	}
 
@@ -38,12 +38,12 @@ class QuestionController extends Controller
         //send mail 
         Mail::send('emailAskedQuestion', $mail_data, function ($message) use ($data) {
 
-        $message->from('knowampinfo@gmail.com', 'knowAmp');
+        $message->from('knowampinfo@gmail.com', 'KnowAmp');
 
         $message->to(\Auth::user()->email)->subject('Question posted successfully');
 
 		});
-        $title = 'knowAmp | Most asked AMPs questions';
+        $title = 'KnowAmp | Most asked AMPs questions';
         $msg = 'Question posted successfully!';
 
         $data = DB::table('questions')
@@ -57,7 +57,7 @@ class QuestionController extends Controller
 	}
 
 	public function listQuestions(Route $route){
-		$title = 'knowAmp | Most asked AMPs questions';
+		$title = 'KnowAmp | Most asked AMPs questions';
 		$currentPath= RouteController::getFacadeRoot()->current()->uri();
 
 		if($currentPath=='login'){
@@ -93,7 +93,7 @@ class QuestionController extends Controller
 			->where('questions.id', '=', $id)
 			->get();
 
-		$title = 'knowAmp | '.$data[0]->question_title;
+		$title = 'KnowAmp | '.$data[0]->question_title;
 		
 		return view('detailedQuestions', compact('title'))->with('data', $data);
 	}
