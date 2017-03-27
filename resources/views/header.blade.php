@@ -201,11 +201,74 @@
         });
     </script>
     <script src="{{ URL::asset('js/editor.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Display editor -->
     <script type="text/javascript">
         $(document).ready( function() {
             $('.cleditor').cleditor();                    
         });
+
+        <?php if(isset($data[0]->question_id)){ ?>
+        //Plus rate to questions
+        $("#incRateQue").click(function(){
+            //var server = window.location.hostname;
+            $.get("http://localhost:8081/knowAmp/incQuestionRate/{{$data[0]->question_id}}", function(data){
+                if(data=='Unauthorized'){
+                    $('#rate_error').show();
+                }
+                else{
+                    var rate = $("#que_rate_val_span").text();
+                    var rate = parseInt(rate,10);
+                    rate++;
+                    $("#que_rate_val_span").text(rate);
+                }
+            });
+        });
+
+        //Nagative rate to questions
+        $("#decRateQue").click(function(){
+            $.get("http://localhost:8081/knowAmp/decQuestionRate/{{$data[0]->question_id}}", function(data){
+                if(data=='Unauthorized'){
+                    $('#rate_error').show();
+                }
+                else{
+                    var rate = $("#que_rate_val_span").text();
+                    var rate = parseInt(rate,10);
+                    rate--;
+                    $("#que_rate_val_span").text(rate);
+                }
+            });
+        });
+
+        //Plus rate to Answer
+        function incRateAns(id){
+            $.get("http://localhost:8081/knowAmp/incAnswerRate/"+id, function(data){
+                if(data=='Unauthorized'){
+                    $('#rate_error').show();
+                }
+                else{
+                    var rate = $("#ans_rate_val_span_"+id).text();
+                    var rate = parseInt(rate);
+                    rate++;
+                    $("#ans_rate_val_span_"+id).text(rate);
+                }
+            });
+        }
+
+        function decRateAns(id){
+            $.get("http://localhost:8081/knowAmp/decAnswerRate/"+id, function(data){
+                if(data=='Unauthorized'){
+                    $('#rate_error').show();
+                }
+                else{
+                    var rate = $("#ans_rate_val_span_"+id).text();
+                    var rate = parseInt(rate);
+                    rate--;
+                    $("#ans_rate_val_span_"+id).text(rate);
+                }
+            });
+        }
+        <?php } ?>
     </script>
     
 </body>

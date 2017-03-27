@@ -89,13 +89,25 @@ class QuestionController extends Controller
 		$data = DB::table('questions')
 			->join('users','questions.user_id', '=', 'users.user_id')
 			->leftjoin('answers', 'answers.questions_id', '=', 'questions.id')
-			->select('questions.id AS question_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created AS question_created_date', 'answers.id', 'answers.answer', 'answers.audit_created AS answer_created_date')
+			->select('questions.id AS question_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'questions.rate', 'users.name', 'questions.answers', 'questions.audit_created AS question_created_date', 'answers.id', 'answers.answer', 'answers.rate AS answer_rate', 'answers.audit_created AS answer_created_date')
 			->where('questions.id', '=', $id)
 			->get();
 
 		$title = 'KnowAmp | '.$data[0]->question_title;
 		
 		return view('detailedQuestions', compact('title'))->with('data', $data);
+	}
+
+	public function incApplyRate($question_id){
+		DB::statement('call applyQuestionRates('.$question_id.',1)');
+
+		return "Voted successfully!";
+	}
+
+	public function decApplyRate($question_id){
+		DB::statement('call applyQuestionRates('.$question_id.',-1)');
+
+		return "Voted successfully!";
 	}
 
 }

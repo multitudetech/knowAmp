@@ -14,10 +14,14 @@
 				</div>
 
 				@if($errors->any()&&$errors->first()!='')
-                    <div class="alert alert-danger row" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         <h4>{{$errors->first()}}</h4>
                     </div>
-                @endif		
+                @endif
+
+                <div class="alert alert-danger" role="alert" id="rate_error" style="display: none;">
+                    <h4>Please login before rating!</h4>
+                </div>		
 			
 				<!-- Articles -->
 				<div class="row">
@@ -42,9 +46,9 @@
 								<div class="col-md-1 col-md-pull-11">
 									<div class="rate_box">
 										<ul class="list-unstyled text-center">
-											<li> <a href="#"> <i class="fa fa-plus" aria-hidden="true"></i> </a> </li>
-											<li> <a href="#"> <span> 12 </span> </a> </li>
-											<li> <a href="#"> <i class="fa fa-minus" aria-hidden="true"></i> </a> </li>
+											<li> <i class="fa fa-plus" id="incRateQue" aria-hidden="true"></i> </li>
+											<li> <span id="que_rate_val_span">{{$data[0]->rate}}</span> </li>
+											<li> <i class="fa fa-minus" id="decRateQue" aria-hidden="true"></i> </li>
 											<li> <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> --> </a> </li>
 										</ul>
 									</div>
@@ -72,10 +76,10 @@
 										<div class="col-md-1 col-md-pull-11">
 											<div class="rate_box">
 												<ul class="list-unstyled text-center">
-													<li> <a href="#"> <i class="fa fa-plus" aria-hidden="true"></i> </a> </li>
-													<li> <a href="#"> <span> 12 </span> </a> </li>
-													<li> <a href="#"> <i class="fa fa-minus" aria-hidden="true"></i> </a> </li>
-													<li> <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> --> </a> </li>
+													<li onclick="incRateAns({{$d->id}})"> <i class="fa fa-plus" aria-hidden="true"></i> </li>
+													<li> <span id="ans_rate_val_span_{{$d->id}}">{{$d->answer_rate}}</span> </li>
+													<li onclick="decRateAns({{$d->id}})"> <i class="fa fa-minus" aria-hidden="true"></i> </li>
+													<li> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->  </li>
 												</ul>
 											</div>
 										</div>

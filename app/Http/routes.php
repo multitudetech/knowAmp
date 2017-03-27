@@ -24,11 +24,22 @@ Route::post('/forgetPassword', ['as' => 'forgetPassword', 'uses' => 'UsersContro
 Route::get('resetPassword/{verifyid}/', ['uses' =>'UsersController@resetPassword']);
 Route::post('/handleResetPassword', ['as' => 'handleResetPassword', 'uses' =>'UsersController@handleResetPassword']);
 
+Route::get('/sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemap']);
+
 Route::group(['middleware' => ['web']], function () {
 	Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);
 	Route::resource('users', 'UsersController', ['only' => ['signup', 'store']]);
+
 	Route::get('/askQuestion', ['middleware' => 'auth', 'as' => 'askQuestion', 'uses' => 'QuestionController@askQuestion']);
 	Route::post('/handleaskQuestion', ['middleware' => 'auth', 'as' => 'handleaskQuestion', 'uses' => 'QuestionController@handleaskQuestion']);
+
 	Route::post('/handleAnswer', ['middleware' => 'auth', 'as' => 'handleAnswer', 'uses' => 'AnswerController@handleAnswer']);
+
+	Route::get('/incQuestionRate/{question_id}', ['middleware' => 'auth', 'uses' => 'QuestionController@incApplyRate']);
+	Route::get('/decQuestionRate/{question_id}', ['middleware' => 'auth', 'uses' => 'QuestionController@decApplyRate']);
+
+	Route::get('/incAnswerRate/{answer_id}', ['middleware' => 'auth', 'uses' => 'AnswerController@incApplyRate']);
+	Route::get('/decAnswerRate/{answer_id}', ['middleware' => 'auth', 'uses' => 'AnswerController@decApplyRate']);
+
 	Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });

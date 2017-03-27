@@ -40,4 +40,16 @@ class AnswerController extends Controller{
 	        return back()->withInput()->withErrors([$msg]);
 		}
 	}
+
+	public function incApplyRate($answer_id){
+		DB::statement('call applyAnswerRates('.$answer_id.',1)');
+
+		return "Voted successfully!";
+	}
+
+	public function decApplyRate($answer_id){
+		DB::statement('call applyAnswerRates('.$answer_id.',-1)');
+
+		return "Voted successfully!";
+	}
 }
