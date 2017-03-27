@@ -66,7 +66,7 @@ class UsersController extends Controller
 
 	            Mail::send('emailverify', $mail_data, function ($message) use ($data) {
 
-	            $message->from('knowampinfo@gmail.com', 'KnowAmp');
+	            $message->from('namaste@knowamp.com', 'KnowAmp');
 
 	            $message->to($data['email'])->subject('Verify knowAmp Account');
 
@@ -119,7 +119,7 @@ class UsersController extends Controller
    		//send mail 
         Mail::send('reSetPassword', $mail_data, function ($message) use ($data) {
 
-	        $message->from('knowampinfo@gmail.com', 'KnowAmp');
+	        $message->from('namaste@knowamp.com', 'KnowAmp');
 
 	        $message->to($data['email'])->subject('Reset password');
     	});

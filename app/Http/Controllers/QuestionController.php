@@ -38,7 +38,7 @@ class QuestionController extends Controller
         //send mail 
         Mail::send('emailAskedQuestion', $mail_data, function ($message) use ($data) {
 
-        $message->from('knowampinfo@gmail.com', 'KnowAmp');
+        $message->from('namaste@knowamp.com', 'KnowAmp');
 
         $message->to(\Auth::user()->email)->subject('Question posted successfully');
 
