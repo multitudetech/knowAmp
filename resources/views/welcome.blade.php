@@ -5,7 +5,7 @@
       
         <div class="row">
             <!-- Left Column -->
-            <div class="col-sm-9">
+            <div class="col-md-9 space20">
             
                 <!-- Alert -->
                 <div class="alert alert-success alert-dismissible" role="alert">
@@ -62,7 +62,7 @@
 
 
           <!-- Right Column -->
-            <div class="col-sm-3">
+            <div class="col-md-3 space20">
 
                 <!-- Ask Question Button -->
 

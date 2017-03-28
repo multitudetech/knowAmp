@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- Template by Quackit.com -->
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/QAPage">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,7 +68,7 @@
                     </li>
                     @if(!(\Auth::user())) 
                     <li class="log_sign">
-                    	<a href="{{ url('/login') }}">log in</a>
+                    	<a href="#login_modal" data-toggle="modal" data-target="#login_modal">log in</a>
                     </li>
                     <li class="log_sign sign_up">
                     	<a href="{{ url('/signup') }}">Sign Up</a>
@@ -107,7 +106,53 @@
 
                         <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                     </form>
-                    <h2 class="search_title"> There is nothing called <span class="blue_clr">Problem</span>,<br>It's just an absence of an idea to find the <span class="blue_clr">Solution</span>.  </h2>
+                    <h2 class="search_tag_line"> There is nothing called <span class="blue_clr">Problem</span>,<br>It's just an absence of an idea to find the <span class="blue_clr">Solution</span>.  </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal search_modal login_modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body ht100">
+                    <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+                    <div class="view_table">
+                        <div class="view_cell">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <!-- Form --> 
+                                <div class="panel panel-default login_box">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            <span class="glyphicon glyphicon-log-in"></span> 
+                                            Log In
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        {!! Form::open(array('route' => 'handleLogin')) !!}
+                                            <div class="form-group">
+                                                {!! Form::text('email', null, array('class' => 'form-control', 'id' => 'uid', 'placeholder' => 'Username')) !!}
+                                                <!-- <input type="text" class="form-control" id="uid" name="uid" placeholder="Username"> -->
+                                            </div>
+                                            <div class="form-group">
+                                                {!! Form::password('password', array('class' => 'form-control', 'id' => 'pwd', 'placeholder' => 'Password')) !!}
+                                                <!-- <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password"> -->
+                                            </div>
+                                            {!! Form::token() !!}
+                                            {!! Form::submit('Log In', array('class' => 'btn btn-default')) !!}
+                                            <!-- <button type="submit" class="btn btn-default">Log In</button> --> <span> or </span>
+                                            <a href="{{ url('/signup') }}" class="btn btn-default register"> Register </a>
+                                            <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forget Password ? </a> </p>
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,6 +240,18 @@
     <script src="{{ URL::asset('js/jquery.cleditor.min.js') }}"></script>
 
     <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).click(function (event) {
+                var clickover = $(event.target);
+                var opened = $(".navbar-collapse").hasClass("collapse in");
+                if (opened === true && !clickover.hasClass("navbar-toggle")) {
+                    $(".navbar-toggle").click();
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
         $('#myModal_search').on('shown.bs.modal', function (e) {
             $('.modal-open').css('padding-right', '0');
             console.log('pass');
@@ -212,7 +269,7 @@
         //Plus rate to questions
         $("#incRateQue").click(function(){
             //var server = window.location.hostname;
-            $.get("http://localhost:8081/knowAmp/incQuestionRate/{{$data[0]->question_id}}", function(data){
+            $.get("http://www.knowamp.com/incQuestionRate/{{$data[0]->question_id}}", function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();
                 }
@@ -227,7 +284,7 @@
 
         //Nagative rate to questions
         $("#decRateQue").click(function(){
-            $.get("http://localhost:8081/knowAmp/decQuestionRate/{{$data[0]->question_id}}", function(data){
+            $.get("http://www.knowamp.com/decQuestionRate/{{$data[0]->question_id}}", function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();
                 }
@@ -242,7 +299,7 @@
 
         //Plus rate to Answer
         function incRateAns(id){
-            $.get("http://localhost:8081/knowAmp/incAnswerRate/"+id, function(data){
+            $.get("http://www.knowamp.com/incAnswerRate/"+id, function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();
                 }
@@ -256,7 +313,7 @@
         }
 
         function decRateAns(id){
-            $.get("http://localhost:8081/knowAmp/decAnswerRate/"+id, function(data){
+            $.get("http://www.knowamp.com/decAnswerRate/"+id, function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();
                 }
@@ -269,6 +326,10 @@
             });
         }
         <?php } ?>
+    </script>
+
+    <script type="text/javascript">
+        $('#uid').focus();
     </script>
     
 </body>

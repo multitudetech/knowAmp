@@ -5,7 +5,7 @@
 	  
 	  	<div class="row">
 			<!-- Left Column -->
-			<div class="col-sm-9">
+			<div class="col-md-9 space20">
 			
 				<!-- Alert -->
 				<div class="alert alert-success alert-dismissible" role="alert">
@@ -26,31 +26,31 @@
 				<!-- Articles -->
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="question_desc">
+						<div class="question_desc" itemscope itemtype="http://schema.org/Question">
 							<div class="main_que_asked">
-								<p>{{ $data[0]->question_title }}</p>
+								<p itemprop="name">{{ $data[0]->question_title }}</p>
 							</div>
 							<div class="row">
-								<div class="col-md-11 col-md-push-1">
+								<div class="col-sm-2 col-xs-2 col-md-1">
+									<div class="rate_box">
+										<ul class="list-unstyled text-center">
+											<li> <a> <i class="fa fa-plus" id="incRateQue" aria-hidden="true"></i>  </a> </li>
+											<li> <span id="que_rate_val_span" itemprop="upvoteCount">{{$data[0]->rate}}</span> </li>
+											<li> <a> <i class="fa fa-minus" id="decRateQue" aria-hidden="true"></i> </a> </li>
+											<li> <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> --> </a> </li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-11 col-sm-10 col-xs-10">
 									<div class="sub_desc_asked">
-										<p><?php echo $data[0]->question_description; ?></p>
+										<p itemprop="text"><?php echo $data[0]->question_description; ?></p>
 
 										<!-- <p class="text-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p> -->
 										<ul class="list-inline review_visit ">
-			                                <li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{$data[0]->question_created_date}}</a></li>
-			                                <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> {{$data[0]->answers}} Answers</a></li>
+			                                <li itemprop="dateCreated"><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{$data[0]->question_created_date}}</a></li>
+			                                <li itemprop="answerCount"><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> {{$data[0]->answers}} Answers</a></li>
 			                                <li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{$data[0]->views}} Views</a></li>
 			                            </ul>
-									</div>
-								</div>
-								<div class="col-md-1 col-md-pull-11">
-									<div class="rate_box">
-										<ul class="list-unstyled text-center">
-											<li> <i class="fa fa-plus" id="incRateQue" aria-hidden="true"></i> </li>
-											<li> <span id="que_rate_val_span">{{$data[0]->rate}}</span> </li>
-											<li> <i class="fa fa-minus" id="decRateQue" aria-hidden="true"></i> </li>
-											<li> <a href="#"> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> --> </a> </li>
-										</ul>
 									</div>
 								</div>
 							</div>
@@ -62,7 +62,17 @@
 				                        foreach ($data as $d) {
 				                    ?>
 									<div class="row">
-										<div class="col-md-11 col-md-push-1">									
+										<div class="col-md-1 col-sm-2 col-xs-2">
+											<div class="rate_box">
+												<ul class="list-unstyled text-center">
+													<li onclick="incRateAns({{$d->id}})"> <i class="fa fa-plus" aria-hidden="true"></i> </li>
+													<li> <span id="ans_rate_val_span_{{$d->id}}">{{$d->answer_rate}}</span> </li>
+													<li onclick="decRateAns({{$d->id}})"> <i class="fa fa-minus" aria-hidden="true"></i> </li>
+													<li> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->  </li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-md-11 col-sm-10 col-xs-10">									
 											<div class="que_ans_box">
 												<p><?php echo $d->answer; ?></p>	
 
@@ -70,16 +80,6 @@
 													<li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ $d->answer_created_date }}</a></li>
 													<!-- <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</a></li>
 													<li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 8 Views</a></li> -->
-												</ul>
-											</div>
-										</div>
-										<div class="col-md-1 col-md-pull-11">
-											<div class="rate_box">
-												<ul class="list-unstyled text-center">
-													<li onclick="incRateAns({{$d->id}})"> <i class="fa fa-plus" aria-hidden="true"></i> </li>
-													<li> <span id="ans_rate_val_span_{{$d->id}}">{{$d->answer_rate}}</span> </li>
-													<li onclick="decRateAns({{$d->id}})"> <i class="fa fa-minus" aria-hidden="true"></i> </li>
-													<li> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->  </li>
 												</ul>
 											</div>
 										</div>
@@ -124,7 +124,7 @@
 
 
 		  <!-- Right Column -->
-			<div class="col-sm-3">
+			<div class="col-md-3 space20">
 
 				<!-- Ask Question Button -->
 
