@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/QAPage">
 <head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+       google_ad_client: "ca-pub-3336946006544881",
+       enable_page_level_ads: true
+     });
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<?php print_r($meta_description); ?>">
+    <meta name="keywords" content="KnowAmp,AMPs,Accelerated Mobile Pages,query,learn amp,graphics,fast html load,question answer,community,amps community,know about amp">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title><?php print_r($title); ?></title>
@@ -61,10 +70,10 @@
                         <a href="{{ url('/') }}">home</a>
                     </li>
                     <li>
-                        <a href="{{ url('/') }}">questions</a>
+                        <a href="{{ url('/questions') }}">questions</a>
                     </li>
                     <li>
-                        <a href="#">about us</a>
+                        <a href="{{ url('/aboutus') }}">about us</a>
                     </li>
                     @if(!(\Auth::user())) 
                     <li class="log_sign">
@@ -76,7 +85,7 @@
                     @endif
                     @if((\Auth::user()))
                     <li class="log_sign">
-                        <a href="#">{{ \Auth::user()->name }}</a>
+                        <a>{{ \Auth::user()->name }}</a>
                     </li>
                     <li class="log_sign sign_up">
                         <a href="{{ url('/logout') }}">Log Out</a>
@@ -187,7 +196,7 @@
         
         <div class="small-print">
             <div class="container">
-                <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+                <p><a href="{{ url('/terms') }}">Terms &amp; Conditions</a> | <a href="{{ url('/privacy') }}">Privacy Policy</a> | <a href="{{ url('/contact') }}">Contact</a></p>
                 <p>Copyright &copy; KnowAmp.com 2017 </p>
             </div>
         </div>

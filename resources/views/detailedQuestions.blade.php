@@ -61,23 +61,23 @@
 									<?php
 				                        foreach ($data as $d) {
 				                    ?>
-									<div class="row">
+									<div class="row" itemscope itemtype="http://schema.org/Answer">
 										<div class="col-md-1 col-sm-2 col-xs-2">
 											<div class="rate_box">
 												<ul class="list-unstyled text-center">
 													<li onclick="incRateAns({{$d->id}})"> <i class="fa fa-plus" aria-hidden="true"></i> </li>
-													<li> <span id="ans_rate_val_span_{{$d->id}}">{{$d->answer_rate}}</span> </li>
+													<li itemprop="upvoteCount"> <span id="ans_rate_val_span_{{$d->id}}">{{$d->answer_rate}}</span> </li>
 													<li onclick="decRateAns({{$d->id}})"> <i class="fa fa-minus" aria-hidden="true"></i> </li>
 													<li> <i class="fa fa-heart-o" aria-hidden="true"></i> <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->  </li>
 												</ul>
 											</div>
 										</div>
 										<div class="col-md-11 col-sm-10 col-xs-10">									
-											<div class="que_ans_box">
+											<div class="que_ans_box" itemprop="text">
 												<p><?php echo $d->answer; ?></p>	
 
 												<ul class="list-inline review_visit">
-													<li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ $d->answer_created_date }}</a></li>
+													<li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i itemprop="dateCreated">{{ $d->answer_created_date }}</a></li>
 													<!-- <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 2 Comments</a></li>
 													<li><a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 8 Views</a></li> -->
 												</ul>

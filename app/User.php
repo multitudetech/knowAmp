@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'nickname','email', 'password', 'contact_number', 'confirm_password', 'verification_code', 'user_id', 'question_title', 'question_description', 'txtEditorContent', 'txtEditor', 'answer_description', 'question_id'
+        'name', 'nickname','email', 'password', 'contact_number', 'confirm_password', 'verification_code', 'user_id', 'question_title', 'question_description', 'txtEditorContent', 'txtEditor', 'answer_description', 'question_id', 'query_data'
     ];
 
     /**
@@ -55,5 +55,10 @@ class User extends Authenticatable
         'password' => 'required',
         'confirm_password' => 'required',
         'verification_code' => 'required'
+    ];
+
+    public static $handle_contact_validation_rules = [
+      'email' => 'required|email',
+      'query_data' => 'required'
     ];
 }

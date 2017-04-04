@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route as RouteController;
 class QuestionController extends Controller
 {
 	public function askQuestion(){
-		$title = "KnowAmp | Ask your question";
-		return view('askQuestion')->with('title', $title);
+		$title = "Ask your question | KnowAmp";
+		$meta_description = "Ask question about AMPs. query regarding accelerated mobile pages ask on KnowAmp. we are here for providing plateform for amps designers";
+		return view('askQuestion', compact('title', 'meta_description'));
 	}
 
 	public function handleaskQuestion(Request $request){
@@ -57,7 +58,7 @@ class QuestionController extends Controller
 	}
 
 	public function listQuestions(Route $route){
-		$title = 'KnowAmp | Most asked AMPs questions';
+		$title = 'Most asked AMPs questions | KnowAmp';
 		$currentPath= RouteController::getFacadeRoot()->current()->uri();
 
 		if($currentPath=='login'){
@@ -74,7 +75,9 @@ class QuestionController extends Controller
 			->orderBy('views', 'desc')
 			->get();
 
-		return view('welcome', compact('title'))->with('data', $data)->withErrors([$msg]);
+		$meta_description = "Questions regarding AMPs (Accelerated Mobile Pages). ".$data[0]->question_title;
+
+		return view('welcome', compact('title', 'meta_description'))->with('data', $data)->withErrors([$msg]);
 
 	}
 
@@ -93,9 +96,10 @@ class QuestionController extends Controller
 			->where('questions.id', '=', $id)
 			->get();
 
-		$title = 'KnowAmp | '.$data[0]->question_title;
+		$title = $data[0]->question_title.' | KnowAmp';
+		$meta_description = $data[0]->question_title." ".$data[0]->question_description;
 		
-		return view('detailedQuestions', compact('title'))->with('data', $data);
+		return view('detailedQuestions', compact('title', 'meta_description'))->with('data', $data);
 	}
 
 	public function incApplyRate($question_id){

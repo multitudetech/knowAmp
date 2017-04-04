@@ -15,8 +15,9 @@ use Storage;
 class UsersController extends Controller
 {
 	public function signup(){
-		$title = "KnowAmp | SignUp";
-		return view('signup', compact('title'));
+		$title = "SignUp | KnowAmp";
+    $meta_description = "SignUp for KnowAmp. KnowAmp is Q&A community for AMPs (Accelerated Mobile Pages).";
+		return view('signup', compact('title', 'meta_description'));
 	}
 
 	public function store(Request $request)
@@ -128,10 +129,11 @@ class UsersController extends Controller
     }
 
     public function resetPassword($verifyid){
-    	$title = "KnowAmp | Reset password";
+    	$title = "Reset password | KnowAmp";
+      $meta_description = "Reset password for KnowAmp. KnowAmp is Q&A community for AMPs (Accelerated Mobile Pages).";
     	$data['verifyid'] = $verifyid;
 
-    	return view('resetPass', compact('title', 'data'));
+    	return view('resetPass', compact('title', 'data', 'meta_description'));
     }
 
     public function handleResetPassword(Request $request){

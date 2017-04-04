@@ -11,12 +11,18 @@
 |
 */
 
-Route::get('/', ['as' => '/', 'uses' => 'QuestionController@listQuestions']);
+Route::get('/', ['as' => '/', 'uses' => 'IndexController@index']);
 Route::get('/index', ['as' => 'index', 'uses' => 'QuestionController@listQuestions']);
+Route::get('/questions', ['as' => 'index', 'uses' => 'QuestionController@listQuestions']);
 Route::get('/login', ['as' => 'login', 'uses' => 'QuestionController@listQuestions']);
+Route::get('/privacy', ['as' => 'privacy', 'uses' => 'IndexController@privacy']);
+Route::get('/terms', ['as' => 'terms', 'uses' => 'IndexController@terms']);
+Route::get('/contact', ['as' => 'contact', 'uses' => 'IndexController@contact']);
+Route::get('/aboutus', ['as' => 'aboutus', 'uses' => 'IndexController@aboutus']);
+Route::post('/handleContact', ['as' => 'handleContact', 'uses' => 'IndexController@handleContact']);
 Route::get('/question/{question_id}', ['uses' => 'QuestionController@detailedQuestions']);
 Route::get('/signup', function () {
-	$title = "KnowAmp | Sign Up";
+	$title = "Sign Up | KnowAmp";
     return view('signup', compact('title'));
 });
 Route::get('verify/{userid}/{verifyid}', ['uses' =>'UsersController@verify']);
