@@ -16,9 +16,9 @@ class AuthController extends Controller
   public function handleLogin(Request $request)
   {
     $this->validate($request, User::$login_validation_rules);      
-   $data = $request->only('email', 'password');
-   //check email verification is done or not
-   $check_verified = DB::table('users')->where('email', $data['email'])->value('verified');
+    $data = $request->only('email', 'password');
+    //check email verification is done or not
+    $check_verified = DB::table('users')->where('email', $data['email'])->value('verified');
     if(\Auth::attempt($data)&&$check_verified){
         //$role = DB::table('users')->where('email', $request['email'])->value('role');      
         return redirect('/');

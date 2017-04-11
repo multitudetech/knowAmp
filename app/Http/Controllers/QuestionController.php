@@ -46,6 +46,7 @@ class QuestionController extends Controller
 		});
         $title = 'KnowAmp | Most asked AMPs questions';
         $msg = 'Question posted successfully!';
+        session(['msg' => $msg]);
 
         $data = DB::table('questions')
 			->join('users','questions.user_id', '=', 'users.user_id')
@@ -54,7 +55,7 @@ class QuestionController extends Controller
 			->orderBy('views', 'desc')
 			->get();
         
-		return view('welcome', compact('title'))->with('data', $data)->withErrors([$msg]);		
+		return view('welcome', compact('title'))->with('data', $data);		
 	}
 
 	public function listQuestions(Route $route){
@@ -62,12 +63,13 @@ class QuestionController extends Controller
 		$currentPath= RouteController::getFacadeRoot()->current()->uri();
 
 		if($currentPath=='login'){
+			$title = 'Login | KnowAmp';
 			$msg = 'Please login before ask question';
 		}
 		else{
 			$msg="";
 		}
-
+		session(['msg' => $msg]);
 		$data = DB::table('questions')
 			->join('users','questions.user_id', '=', 'users.user_id')
 			->select('questions.id', 'questions.user_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created')
@@ -77,7 +79,7 @@ class QuestionController extends Controller
 
 		$meta_description = "Questions regarding AMPs (Accelerated Mobile Pages). ".$data[0]->question_title;
 
-		return view('welcome', compact('title', 'meta_description'))->with('data', $data)->withErrors([$msg]);
+		return view('welcome', compact('title', 'meta_description'))->with('data', $data);
 
 	}
 
@@ -86,6 +88,8 @@ class QuestionController extends Controller
 		for($i=0; $i<5; $i++){
 			$id = base64_decode($id);
 		}
+		$id = str_replace('\'','',$id);
+		$id = str_replace('"','',$id);
 		//increse view count
 		DB::statement('call questionViewCount('.$id.')');
 
@@ -103,12 +107,16 @@ class QuestionController extends Controller
 	}
 
 	public function incApplyRate($question_id){
+		$question_id = str_replace('\'','',$question_id);
+		$question_id = str_replace('"','',$question_id);
 		DB::statement('call applyQuestionRates('.$question_id.',1)');
 
 		return "Voted successfully!";
 	}
 
 	public function decApplyRate($question_id){
+		$question_id = str_replace('\'','',$question_id);
+		$question_id = str_replace('"','',$question_id);
 		DB::statement('call applyQuestionRates('.$question_id.',-1)');
 
 		return "Voted successfully!";

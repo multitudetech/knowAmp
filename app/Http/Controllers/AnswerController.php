@@ -33,21 +33,27 @@ class AnswerController extends Controller{
 	        ]);
 	        DB::statement('call answerCount('.$id.')');
 	        $msg = 'Answer posted successfully!';
-	        return back()->withInput()->withErrors([$msg]);
+	        session(['msg' => $msg]);
+	        return back()->withInput();
 		}
 		else{
 			$msg = 'Sorry! Answer does not posted please try again';
-	        return back()->withInput()->withErrors([$msg]);
+			session(['msg' => $msg]);
+	        return back()->withInput();
 		}
 	}
 
 	public function incApplyRate($answer_id){
+		$id = str_replace('\'','',$id);
+		$id = str_replace('"','',$id);
 		DB::statement('call applyAnswerRates('.$answer_id.',1)');
 
 		return "Voted successfully!";
 	}
 
 	public function decApplyRate($answer_id){
+		$id = str_replace('\'','',$id);
+		$id = str_replace('"','',$id);
 		DB::statement('call applyAnswerRates('.$answer_id.',-1)');
 
 		return "Voted successfully!";

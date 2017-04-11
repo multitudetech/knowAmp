@@ -43,7 +43,7 @@
 								</div>
 								<div class="col-md-11 col-sm-10 col-xs-10">
 									<div class="sub_desc_asked">
-										<p itemprop="text"><?php echo $data[0]->question_description; ?></p>
+										<p itemprop="text">{!! $data[0]->question_description; !!}</p>
 
 										<!-- <p class="text-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p> -->
 										<ul class="list-inline review_visit ">
@@ -74,7 +74,7 @@
 										</div>
 										<div class="col-md-11 col-sm-10 col-xs-10">									
 											<div class="que_ans_box" itemprop="text">
-												<p><?php echo $d->answer; ?></p>	
+												<p>{!! $d->answer !!}</p>
 
 												<ul class="list-inline review_visit">
 													<li><a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i itemprop="dateCreated">{{ $d->answer_created_date }}</a></li>
@@ -133,63 +133,8 @@
 				</div>
  				@if(!(\Auth::user()))
 				<!-- Form --> 
-				<div class="panel panel-default login_box">
-					<div class="panel-heading">
-						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-log-in"></span> 
-							Log In
-						</h3>
-					</div>
-					<div class="panel-body">
-						<form>
-							<div class="form-group">
-								<input type="text" class="form-control" id="uid" name="uid" placeholder="Username">
-							</div>
-							<div class="form-group">
-								<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
-							</div>
-							<button type="submit" class="btn btn-default">Log In</button> <span> or </span>
-							<a href="#" class="btn btn-default register"> Register </a>
-							<p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forget Password ? </a> </p>
-						</form>
-					</div>
-				</div>
 	 			@endif
-				<!-- Progress Bars -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">
-							<span class="glyphicon glyphicon-scale"></span> 
-							Dramatically Engage
-						</h3>
-					</div>
-					<div class="panel-body">
-						<div class="progress">
-							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
-							aria-valuemin="0" aria-valuemax="100" style="width:100%">
-								100% Proactively Envisioned
-							</div>
-						</div>
-						<div class="progress">
-							<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80"
-							aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								80% Objectively Innovated
-							</div>
-						</div>
-						<div class="progress">
-							<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45"
-							aria-valuemin="0" aria-valuemax="100" style="width:45%">
-								45% Portalled
-							</div>
-						</div>
-						<div class="progress">
-							<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="35"
-							aria-valuemin="0" aria-valuemax="100" style="width:35%">
-								35% Done
-							</div>
-						</div>
-					</div>
-				</div>				
+				<!-- Progress Bars -->			
 
 			</div><!--/Right Column -->
 		</div>

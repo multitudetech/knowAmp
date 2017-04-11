@@ -74,7 +74,8 @@ class UsersController extends Controller
 	    		});
 
 	            $msg = 'We have send you verification email please verify it';
-	          	return redirect()->route('login')->withErrors([$msg]);
+              session(['msg' => $msg]);
+	          	return redirect()->route('login');
 	        }
     	}
     	else{
@@ -98,11 +99,13 @@ class UsersController extends Controller
             ->update(['verified' => 1]);
 
             $msg = "User verified successfull";
+            session(['msg' => $msg]);
             //redirect to the login page
             return redirect('/');
         }
         else{
         	$msg = "User doesn't verified";
+          session(['msg' => $msg]);
         }
     }
 

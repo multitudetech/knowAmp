@@ -182,7 +182,7 @@ p { padding:0 !important; margin:0 !important }
 
                                         <div  style="color:#808080; font-family:Arial; font-size:10px; mso-line-height-rule:exactly; line-height:14px; text-align:left;">
                                             <div>
-                                                Disclaimer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a vulputate mi. Maecenas eget sodales lorem. Praesent a vestibulum ex. Donec ornare ultricies laoreet. Nulla facilisi. Fusce sodales magna lorem, in elementum lorem mattis et. Morbi nulla purus, euismod consectetur interdum non, luctus ultricies nunc. 
+                                                Disclaimer: This message is for the designated recipient only and may contain privileged, proprietary, or otherwise confidential information. If you have received it in error, please notify the sender immediately and delete the original. Any other use of the e-mail by you is prohibited. Where allowed by local law, electronic communications with KnowAmp, including e-mail and instant messaging (including content), may be scanned by our systems for the purposes of information security and assessment of internal compliance with KnowAmp policy. 
                                             </div>
                                         </div>
 

@@ -92,7 +92,7 @@
                             {!! Form::submit('Log In', array('class' => 'btn btn-default')) !!}
                             <!-- <button type="submit" class="btn btn-default">Log In</button> --> <span> or </span>
                             <a href="{{ url('/signup') }}" class="btn btn-default register"> Register </a>
-                            <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forget Password ? </a> </p>
+                            <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forgot Password ? </a> </p>
                         {!! Form::close() !!}
                     </div>
                 </div>

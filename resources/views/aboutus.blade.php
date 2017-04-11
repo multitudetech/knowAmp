@@ -19,11 +19,11 @@
 				</p>
 
 				<p>
-					As we know that "Invention is the mother of need", same way the idea of this startup arised when we really we felt the need. When we needed to know about amp there were no worthy solutions or content related to it. 
+					As we know that "Invention is the mother of need", same way the idea of this startup arised when we really felt the need. When we needed to know about amp there were no worthy solutions or content related to it. 
 				</p>
 
 				<p>
-					So we decided to give a platform to all the web designers, to communicate and learn about amp and share their knowlewith others.
+					So we decided to give a platform to all the web designers, to communicate and learn about amp and share their knowledge with others.
 				</p>
 
 				<p>

@@ -11,7 +11,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<?php print_r($meta_description); ?>">
+    <?php if(isset($meta_description)){ ?>
+    <meta name="description" content="{{$meta_description}}">
+    <?php } ?>
     <meta name="keywords" content="KnowAmp,AMPs,Accelerated Mobile Pages,query,learn amp,graphics,fast html load,question answer,community,amps community,know about amp">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -26,7 +28,6 @@
     <link href="{{URL::asset('css/custom.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/editor.css')}}" type="text/css" rel="stylesheet"/>
     <link id="base-style" href="{{ URL::asset('css/jquery.cleditor.css') }}" rel="stylesheet">
-    <link href="{{URL::asset('css/prism.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -153,7 +154,7 @@
                                             {!! Form::submit('Log In', array('class' => 'btn btn-default')) !!}
                                             <!-- <button type="submit" class="btn btn-default">Log In</button> --> <span> or </span>
                                             <a href="{{ url('/signup') }}" class="btn btn-default register"> Register </a>
-                                            <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forget Password ? </a> </p>
+                                            <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forgot Password ? </a> </p>
                                         {!! Form::close() !!}
                                     </div>
                                 </div>
@@ -180,11 +181,12 @@
                 <div class="row">
                     <div class="col-sm-6 footer-blurb-item">
                         <h3>Dais</h3>
-                        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                        <p>Yes, Now you are the Chief Guest on the Q-A platform of KnowAmp Network Community. KnowAmp  provides you the network to ask related questions and it will be answered by the passionate experts.
+                            It aims to Share, Learn and Educate every single information about AMP. So stretch your back and get ready for all new Community Network-- KnowAmp</p>
                     </div>
                     <div class="col-sm-6 footer-blurb-item">
                         <h3>Speakers & Listeners</h3>
-                        <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. </p>
+                        <p>All is Worthless without audience, we value our tribe..!!  Speakers can feel free to ask any question regarding AMP and have answers, Listeners open their mind by having answers world wide for better exposure and knowledge about Accelerated Mobile Pages. We are here to help on Live Chat and can get expert’s advice. </p>
                     </div>
                 </div>
                 <!-- /.row -->  
@@ -244,8 +246,6 @@
     <!-- Placeholder Images -->
     <script src="{{URL::asset('js/holder.min.js')}}"></script>
 
-    <script src="{{URL::asset('js/prism.js')}}" data-manual></script>
-
     <script src="{{ URL::asset('js/jquery.cleditor.min.js') }}"></script>
 
     <script type="text/javascript">
@@ -267,7 +267,7 @@
         });
     </script>
     <script src="{{ URL::asset('js/editor.js')}}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <!-- Display editor -->
     <script type="text/javascript">
         $(document).ready( function() {
@@ -277,6 +277,7 @@
         <?php if(isset($data[0]->question_id)){ ?>
         //Plus rate to questions
         $("#incRateQue").click(function(){
+            console.log("call que inc");
             //var server = window.location.hostname;
             $.get("http://www.knowamp.com/incQuestionRate/{{$data[0]->question_id}}", function(data){
                 if(data=='Unauthorized'){
@@ -293,6 +294,7 @@
 
         //Nagative rate to questions
         $("#decRateQue").click(function(){
+            console.log("call que desc");
             $.get("http://www.knowamp.com/decQuestionRate/{{$data[0]->question_id}}", function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();
@@ -308,6 +310,7 @@
 
         //Plus rate to Answer
         function incRateAns(id){
+            console.log("inc rate ans")
             $.get("http://www.knowamp.com/incAnswerRate/"+id, function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();
@@ -322,6 +325,7 @@
         }
 
         function decRateAns(id){
+            console.log("dec rate ans");
             $.get("http://www.knowamp.com/decAnswerRate/"+id, function(data){
                 if(data=='Unauthorized'){
                     $('#rate_error').show();

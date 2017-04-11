@@ -70,49 +70,7 @@
 					</div>
 				</div>				
 	 
-				<!-- Progress Bars -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title fa-fa-title">
-							<i class="fa fa-tasks" aria-hidden="true"></i>
-							Related Qurstions
-						</h3>
-					</div>
-					<div class="panel-body">
-						<!-- <div class="space100"></div> -->
-						<ul class="list-unstyled fa-angle-list">
-							<li>
-								<a href="#"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-							</li>
-							<li>
-								<a href="#"> Etiam accumsan mi ac bibendum ornare. </a>
-							</li>
-							<li>
-								<a href="#"> In et felis a quam mattis malesuada nec ac risus. </a>
-							</li>
-							<li>
-								<a href="#"> Vivamus tincidunt elit et metus imperdiet accumsan. </a>
-							</li>
-							<li>
-								<a href="#"> Aenean feugiat mi vel lectus pharetra, eget tincidunt turpis rhoncus. </a>
-							</li>
-							<li>
-								<a href="#"> Vestibulum id sem lacinia tortor dictum iaculis et non augue. </a>
-							</li>
-							<li>
-								<a href="#"> In condimentum eros sed aliquet ultricies. </a>
-							</li>
-							<li>
-								<a href="#"> Phasellus porta magna at nulla bibendum, aliquet ultrices nibh efficitur. </a>
-							</li>
-							<li>
-								<a href="#"> Cras sit amet leo vel ex placerat fermentum. </a>
-							</li>
-						</ul>
-					</div>
-				</div>				
-
-			</div><!--/Right Column -->
+				<!--/Right Column -->
 		</div>
 
 	</div><!--/container-fluid-->
