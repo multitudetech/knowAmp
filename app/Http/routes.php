@@ -20,7 +20,8 @@ Route::get('/terms', ['as' => 'terms', 'uses' => 'IndexController@terms']);
 Route::get('/contact', ['as' => 'contact', 'uses' => 'IndexController@contact']);
 Route::get('/aboutus', ['as' => 'aboutus', 'uses' => 'IndexController@aboutus']);
 Route::post('/handleContact', ['as' => 'handleContact', 'uses' => 'IndexController@handleContact']);
-Route::get('/question/{question_id}', ['uses' => 'QuestionController@detailedQuestions']);
+Route::get('/question/{question_id}/{fake_title}', ['uses' => 'QuestionController@detailedQuestions']);
+Route::get('/news', ['uses' => 'NewsController@index']);
 Route::get('/signup', function () {
 	$title = "Sign Up | KnowAmp";
     return view('signup', compact('title'));
@@ -29,8 +30,10 @@ Route::get('verify/{userid}/{verifyid}', ['uses' =>'UsersController@verify']);
 Route::post('/forgetPassword', ['as' => 'forgetPassword', 'uses' => 'UsersController@forgetPassword']);
 Route::get('resetPassword/{verifyid}/', ['uses' =>'UsersController@resetPassword']);
 Route::post('/handleResetPassword', ['as' => 'handleResetPassword', 'uses' =>'UsersController@handleResetPassword']);
+Route::get('search/{search_key}',['uses' => 'QuestionController@search']);
 
 Route::get('/sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemap']);
+Route::get('/newsletter', ['as' => 'newsletter', 'uses' => 'NewsController@newsletter']);
 
 Route::group(['middleware' => ['web']], function () {
 	Route::post('/handleLogin', ['as' => 'handleLogin', 'uses' => 'AuthController@handleLogin']);
@@ -49,3 +52,6 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
+
+//cron
+Route::get('/fetchnews/ogvw0oi2cqjbwwqjr4db', ['as' => 'fetchnews', 'uses' => 'NewsController@callapi']);

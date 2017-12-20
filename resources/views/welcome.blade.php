@@ -43,8 +43,10 @@
                                 for($i=0; $i<5; $i++){
                                     $question_id = base64_encode($question_id);
                                 }
+                                $fake_url = str_replace(' ', '-', $d->question_title);
+                                $fake_url = preg_replace('/[^A-Za-z0-9\-]/', '', $fake_url);
                             ?>
-                            <?php $view_path = url('/question/'.$question_id); ?>
+                            <?php $view_path = url('/question/'.$question_id.'/'.$fake_url); ?>
                             <p><a href="{{ $view_path }}"><button class="btn btn-default">Read More</button></a></p>
                             <!-- <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p> -->
                             <ul class="list-inline review_visit ">
@@ -55,7 +57,8 @@
                         </div>
                     <?php
                         }
-                    ?>                     
+                    ?>
+                    {{ $data->links() }}                     
                     </div>
                 </div>
             </div><!--/Center Column-->
@@ -82,15 +85,13 @@
                         {!! Form::open(array('route' => 'handleLogin')) !!}
                             <div class="form-group">
                                 {!! Form::text('email', null, array('class' => 'form-control', 'id' => 'uid', 'placeholder' => 'Username')) !!}
-                                <!-- <input type="text" class="form-control" id="uid" name="uid" placeholder="Username"> -->
                             </div>
                             <div class="form-group">
                                 {!! Form::password('password', array('class' => 'form-control', 'id' => 'pwd', 'placeholder' => 'Password')) !!}
-                                <!-- <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password"> -->
                             </div>
                             {!! Form::token() !!}
                             {!! Form::submit('Log In', array('class' => 'btn btn-default')) !!}
-                            <!-- <button type="submit" class="btn btn-default">Log In</button> --> <span> or </span>
+                            <span> or </span>
                             <a href="{{ url('/signup') }}" class="btn btn-default register"> Register </a>
                             <p class="space10"> <a href="#myModal_reset" data-toggle="modal" data-target="#myModal_reset"> Forgot Password ? </a> </p>
                         {!! Form::close() !!}
@@ -98,39 +99,8 @@
                 </div>
                 @endif
                 <!-- Progress Bars -->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <span class="glyphicon glyphicon-scale"></span> 
-                            Dramatically Engage
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100"
-                            aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                                100% Proactively Envisioned
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                80% Objectively Innovated
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45"
-                            aria-valuemin="0" aria-valuemax="100" style="width:45%">
-                                45% Portalled
-                            </div>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="35"
-                            aria-valuemin="0" aria-valuemax="100" style="width:35%">
-                                35% Done
-                            </div>
-                        </div>
-                    </div>
+                <div class="panel">
+                    <a href="http://api.hostinger.in/redir/22156066" target="_blank"><img src="http://www.hostinger.in/banners/en/hostinger-300x250-1.gif" alt="Hosting" border="0" width="100%" height="250" class="img-responsive center-block"/></a>
                 </div>              
 
             </div><!--/Right Column -->

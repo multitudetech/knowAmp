@@ -24,49 +24,43 @@
 						<div class="row">
 							<div class="col-md-6 form-group">
 								<label> Name *</label>
-								<input type="text" name="name" class="form-control" required="" placeholder="Tell Your Name">
+								{!! Form::text('name', null, array('class' => 'form-control',  'placeholder' => 'Tell Your Name', 'required' => 'required')) !!}
 							</div>
 							<div class="col-md-6 form-group">
 								<label> Nickname (If Any) </label>
-								<input type="text" name="nickname" class="form-control" placeholder="Tell Your Nickname">
+								{!! Form::text('nickname', null, array('class' => 'form-control',  'placeholder' => 'Tell Your Nickname')) !!}
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-group">
 								<label> Email Address *</label>
-								<input type="email" name="email" class="form-control" required="" placeholder="Tell Your Email Address">
+								{!! Form::email('email', null, array('class' => 'form-control',  'placeholder' => 'Tell Your Email Address', 'required' => 'required')) !!}
 							</div>
 							<div class="col-md-6 form-group">
 								<label> Contact Number *</label>
-								<input type="tel" name="contact_number" class="form-control" required="" placeholder="How to Reach You">
+								{!! Form::tel('contact_number', null, array('class' => 'form-control',  'placeholder' => 'How to Reach You', 'required' => 'required')) !!}
+								<!-- <input type="tel" name="contact_number" class="form-control" required="" placeholder="How to Reach You"> -->
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 form-group">
 								<label>Password *</label>
-								<input type="password" name="password" class="form-control" required="" placeholder="Password">
+								{!! Form::password('password', null, array('class' => 'form-control',  'placeholder' => 'Password', 'required' => 'required')) !!}
 							</div>
 							<div class="col-md-6 form-group">
 								<label>Confirm Password *</label>
-								<input type="password" name="confirm_password" class="form-control" required="" placeholder="Confirm Yours">
+								{!! Form::password('confirm_password', null, array('class' => 'form-control',  'placeholder' => 'Confirm Password', 'required' => 'required')) !!}
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<p> <i class="fa fa-bolt" aria-hidden="true"></i> &nbsp; By registering, you agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> of KnowAmp.  &nbsp; <i class="fa fa-bolt" aria-hidden="true"></i></p>
+								<p> <i class="fa fa-bolt" aria-hidden="true"></i> &nbsp; By registering, you agree to the <a href="{{ url('/privacy') }}">Privacy Policy</a> and <a href="{{ url('/terms') }}">Terms of Service</a> of KnowAmp.  &nbsp; <i class="fa fa-bolt" aria-hidden="true"></i></p>
 								<button type="submit" class="btn btn-primary fsize16 space10">Register Now</button>
 							</div>
 						</div>
 					{!! Form::close() !!}
 				</div>
-			</div><!-- 
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="middle_form space20">
-						<p> Already registered? <a href="#"> Log In </a> </p>
-					</div>
-				</div>
-			</div> -->
+			</div>
 		</div>
 	</section>
 @endsection

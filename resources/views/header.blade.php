@@ -110,7 +110,19 @@
                     <h3 class="search_title"> Where have you been stuck at?  </h3>
                     <form class="main-search">
                         <div class="form-group">
-                            <input type="search" name="main-search" class="form-control" placeholder="Enter Your Query Here...">
+                            <!-- <input type="search" name="main-search" class="form-control" placeholder="Enter Your Query Here..."> -->
+                            <script>
+                              (function() {
+                                var cx = '012850087033547571257:coh-nzaqq78';
+                                var gcse = document.createElement('script');
+                                gcse.type = 'text/javascript';
+                                gcse.async = true;
+                                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                                var s = document.getElementsByTagName('script')[0];
+                                s.parentNode.insertBefore(gcse, s);
+                              })();
+                            </script>
+                            <gcse:search></gcse:search>
                             <button type="submit" class="btn"> <i class="fa fa-search" aria-hidden="true"></i> </button>
                         </div>
 
@@ -281,12 +293,15 @@
             //var server = window.location.hostname;
             $.get("http://www.knowamp.com/incQuestionRate/{{$data[0]->question_id}}", function(data){
                 if(data=='Unauthorized'){
+                    console.log("if");
                     $('#rate_error').show();
                 }
                 else{
+                    console.log("else");
                     var rate = $("#que_rate_val_span").text();
                     var rate = parseInt(rate,10);
                     rate++;
+                    console.log(rate);
                     $("#que_rate_val_span").text(rate);
                 }
             });

@@ -8,43 +8,34 @@
 			<div class="col-md-8">
 				<h3 class="ans_count"> Ask Your question here: </h3>
 
+				<?php
+                    if(session('msg')!=''){
+                ?>
+                        <div class="alert alert-danger" role="alert">
+                            <h4>{{session('msg')}}</h4>
+                        </div>
+                <?php
+                        session(['msg' => '']);
+                    }
+                ?>
+
 				<div class="row">
 					<div class="col-md-12">
 						{!! Form::open(array('route' => 'handleaskQuestion')) !!}
 							<div class="form-group row">
 								<label class="control-label col-md-1 space5">Title:</label>
 								<div class="col-md-11">
-									<input type="text" name="question_title" class="form-control" placeholder="What's question for amp pages?">
+									{!! Form::text('question_title', null, array('class' => 'form-control',  'placeholder' => 'What\'s question for amp pages?')) !!}
 								</div>
 							</div>
 
 							<div class="row form-group">
 								<div class="col-md-12">
 									<div class="custom_ans_box space20">
-										<!-- <img src="img/placeholder_edit.jpg" class="img-responsive center-bolck wid100"> -->
 										{!! Form::textarea('question_description', null, array('class' => 'form-control cleditor', 'id' => 'textarea2', 'rows' => '3')) !!}
-										<!-- {!! Form::textarea('question_description', null, array('class' => 'form-control cleditor', 'id' => 'textarea2', 'rows' => '3')) !!} -->
-										<!-- <div id="txtEditor"></div> -->
-										<!-- <textarea id="txtEditor" name="txtEditor"></textarea>
-										<textarea id="txtEditorContent" name="txtEditorContent" hidden=""></textarea> -->
 									</div>
 								</div>
 							</div>
-							<!-- <div class="form-group row">
-								<label class="control-label col-md-1 space5">Tags:</label>
-								<div class="col-md-11">
-									<input type="text" name="ask_question" class="form-control" placeholder="What's question for amp pages?">
-								</div>
-							</div> -->
-							<!-- <div class="form-group row">
-							    <div class="col-md-12">
-							      <div class="checkbox">
-							        <label class="f700">
-							          <input type="checkbox"> Send responses to my registered Email Address.
-							        </label>
-							      </div>
-							    </div>
-							</div> -->
 							<button type="submit" name="ask_question" class="btn btn-default btn-primary">Post Your Question</button>
 						{!! Form::close() !!}
 					</div>

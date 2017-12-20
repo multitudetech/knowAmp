@@ -47,15 +47,7 @@ class QuestionController extends Controller
         $title = 'KnowAmp | Most asked AMPs questions';
         $msg = 'Question posted successfully!';
         session(['msg' => $msg]);
-
-        $data = DB::table('questions')
-			->join('users','questions.user_id', '=', 'users.user_id')
-			->select('questions.id', 'questions.user_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created')
-			->limit(10)
-			->orderBy('views', 'desc')
-			->get();
-        
-		return view('welcome', compact('title'))->with('data', $data);		
+        return redirect('/askQuestion');		
 	}
 
 	public function listQuestions(Route $route){
@@ -73,9 +65,8 @@ class QuestionController extends Controller
 		$data = DB::table('questions')
 			->join('users','questions.user_id', '=', 'users.user_id')
 			->select('questions.id', 'questions.user_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'users.name', 'questions.answers', 'questions.audit_created')
-			->limit(10)
 			->orderBy('views', 'desc')
-			->get();
+			->simplePaginate(15);
 
 		$meta_description = "Questions regarding AMPs (Accelerated Mobile Pages). ".$data[0]->question_title;
 
@@ -120,6 +111,10 @@ class QuestionController extends Controller
 		DB::statement('call applyQuestionRates('.$question_id.',-1)');
 
 		return "Voted successfully!";
+	}
+
+	public function search($search_key){
+		
 	}
 
 }

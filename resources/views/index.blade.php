@@ -14,7 +14,7 @@
     <?php if(isset($meta_description)){ ?>
     <meta name="description" content="<?php print_r($meta_description); ?>">
     <?php } ?>
-    <meta name="keywords" content="KnowAmp,AMPs,Accelerated Mobile Pages,query,learn amp,graphics,fast html load,question answer,community,amps community,know about amp">
+    <meta name="keywords" content="KnowAmp,knowamp.com,accelerated mobile pages,amp,amp google,google accelerated mobile pages,amp mobile,amp mobile,mobile amp,mobile page,project amp,amp html,google amp pages,amp website">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title><?php print_r($title); ?></title>
@@ -111,8 +111,7 @@
                     <h3 class="search_title"> Where have you been stuck at?  </h3>
                     <form class="main-search">
                         <div class="form-group">
-                            <input type="search" name="main-search" class="form-control" placeholder="Enter Your Query Here...">
-                            <button type="submit" class="btn"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                            
                         </div>
 
                         <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>

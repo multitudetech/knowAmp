@@ -44,16 +44,16 @@ class AnswerController extends Controller{
 	}
 
 	public function incApplyRate($answer_id){
-		$id = str_replace('\'','',$id);
-		$id = str_replace('"','',$id);
+		$answer_id = str_replace('\'','',$answer_id);
+		$answer_id = str_replace('"','',$answer_id);
 		DB::statement('call applyAnswerRates('.$answer_id.',1)');
 
 		return "Voted successfully!";
 	}
 
 	public function decApplyRate($answer_id){
-		$id = str_replace('\'','',$id);
-		$id = str_replace('"','',$id);
+		$answer_id = str_replace('\'','',$answer_id);
+		$answer_id = str_replace('"','',$answer_id);
 		DB::statement('call applyAnswerRates('.$answer_id.',-1)');
 
 		return "Voted successfully!";

@@ -13,7 +13,7 @@ class SitemapController extends Controller
 {
 	public function sitemap(){
 		$data = DB::table('questions')
-			->select('questions.id', 'questions.audit_updated')
+			->select('questions.id', 'questions.audit_updated', 'questions.question_title')
 			->get();
 		$link = "http://www.knowamp.com/question/";
 
@@ -30,9 +30,12 @@ class SitemapController extends Controller
 				$id = base64_encode($id);
 			}
 
+			$fake_url = str_replace(' ', '-', $d->question_title);
+            $fake_url = preg_replace('/[^A-Za-z0-9\-]/', '', $fake_url);
+
 			$time = new DateTime($d->audit_updated);
 			$lastmod = $time->format('Y-m-d');
-			$xml.="<url><loc>".$link.$id."</loc><lastmod>".$lastmod."</lastmod></url>
+			$xml.="<url><loc>".$link.$id."/".$fake_url."</loc><lastmod>".$lastmod."</lastmod></url>
 			";
 		}
 		//static urls
@@ -40,6 +43,7 @@ class SitemapController extends Controller
 		$xml.="<url><loc>http://www.knowamp.com/login</loc><lastmod>2017-03-27</lastmod></url>";
 		$xml.="<url><loc>http://www.knowamp.com/signup</loc><lastmod>2017-03-27</lastmod></url>";
 		$xml.="<url><loc>http://www.knowamp.com/forgetPassword</loc><lastmod>2017-03-27</lastmod></url>";
+		$xml.="<url><loc>http://www.knowamp.com/news</loc><lastmod>".date('Y-m-d')."</lastmod></url>";
 
 		$xml.="</urlset>";
 
