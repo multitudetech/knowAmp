@@ -1,5 +1,9 @@
 @extends('header')
 @section('content')
+<?php
+use App\content_news;
+$news = content_news::get();
+?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">

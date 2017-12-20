@@ -10,9 +10,8 @@ class NewsController extends Controller{
 	public function index()
 	{
 		$title = 'News | KnowAmp | Technical News | Current affairs';
-		$news = content_news::get();
 
-		return view('news', compact('title', 'news'));
+		return view('news', compact('title'));
 	}
 
 	public function newsletter(){
