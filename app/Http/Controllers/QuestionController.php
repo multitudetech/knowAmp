@@ -87,14 +87,15 @@ class QuestionController extends Controller
 		$data = DB::table('questions')
 			->join('users','questions.user_id', '=', 'users.user_id')
 			->leftjoin('answers', 'answers.questions_id', '=', 'questions.id')
-			->select('questions.id AS question_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'questions.rate', 'users.name', 'questions.answers', 'questions.audit_created AS question_created_date', 'answers.id', 'answers.answer', 'answers.rate AS answer_rate', 'answers.audit_created AS answer_created_date')
+			->select('questions.id AS question_id', 'questions.question_title', 'questions.question_description', 'questions.views', 'questions.rate', 'users.name', 'questions.answers', 'questions.audit_created AS question_created_date', 'answers.id', 'answers.answer', 'answers.rate AS answer_rate', 'answers.audit_created AS answer_created_date', 'questions.meta', 'questions.keywords')
 			->where('questions.id', '=', $id)
 			->get();
 
 		$title = $data[0]->question_title.' | KnowAmp';
-		$meta_description = $data[0]->question_title." ".$data[0]->question_description;
+		$meta_description = $data[0]->meta;
+		$keywords = $data[0]->keywords;
 		
-		return view('detailedQuestions', compact('title', 'meta_description'))->with('data', $data);
+		return view('detailedQuestions', compact('title', 'meta_description', 'keywords'))->with('data', $data);
 	}
 
 	public function incApplyRate($question_id){

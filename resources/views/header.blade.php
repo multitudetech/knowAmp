@@ -14,7 +14,18 @@
     <?php if(isset($meta_description)){ ?>
     <meta name="description" content="{{$meta_description}}">
     <?php } ?>
+    <?php
+    if(isset($keywords)){
+    ?>
+    <meta name="keywords" content="{!! $keywords !!}">
+    <?php
+    }
+    else{
+    ?>
     <meta name="keywords" content="KnowAmp,AMPs,Accelerated Mobile Pages,query,learn amp,graphics,fast html load,question answer,community,amps community,know about amp">
+    <?php
+    }
+    ?>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title><?php print_r($title); ?></title>

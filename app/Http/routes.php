@@ -53,5 +53,10 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
 });
 
+//admin
+Route::get('/admin', ['as' => 'admin', 'uses' => 'Admin\LoginController@index']);
+Route::get('/admin/questionlist', ['as' => 'questionlist', 'uses' => 'Admin\QuestionlistController@index']);
+Route::post('/admin/handleseo', ['as' => 'handleseo', 'uses' => 'Admin\QuestionlistController@store']);
+
 //cron
 Route::get('/fetchnews/ogvw0oi2cqjbwwqjr4db', ['as' => 'fetchnews', 'uses' => 'NewsController@callapi']);
