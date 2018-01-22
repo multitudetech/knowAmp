@@ -12,7 +12,7 @@ use App\User;
 class IndexController extends Controller{
 
 	public function index(){
-		$title = "KnowAmp";
+		$title = "KnowAmp | Accelerated Mobile Pages Community Network";
 		$meta_description = "We are online Q&A community for all the web designers out there. Solve AMPs query. accelerated mobile pages";
 
 		$user_count = DB::table('users')

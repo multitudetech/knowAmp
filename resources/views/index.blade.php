@@ -135,10 +135,7 @@
                                 <!-- Form --> 
                                 <div class="panel panel-default login_box">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">
-                                            <span class="glyphicon glyphicon-log-in"></span> 
-                                            Log In
-                                        </h3>
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-log-in"></span> KnowAmp Log In</h3>
                                     </div>
                                     <div class="panel-body">
                                         {!! Form::open(array('route' => 'handleLogin')) !!}
@@ -197,7 +194,7 @@
 			<div class="col-md-5">
 				<div class="left_content">
 					<div class="content">
-						<h3 class="content_name"> Dais </h3>
+						<h3 class="content_name">Dais for Accelerated Mobile Pages Skill</h3>
 						<p>
 							Yes, Now you are the Chief Guest on the Q-A platform of KnowAmp Network Community. KnowAmp  provides you the network to ask related questions and it will be answered by the passionate experts.
 							It aims to Share, Learn and Educate every single information about AMP. So stretch your back and get ready for all new Community Network-- KnowAmp
@@ -293,7 +290,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h3 class="search_title"> No worries, cookies are still in the box !!   </h3>
+                    <h3 class="search_title">No worries, cookies are still in the project box !!</h3>
                     {!! Form::open(array('route' => 'forgetPassword', 'class' => 'main-search main-forget')) !!}
                         <div class="form-group">
                             <input type="text" name="email" class="form-control" placeholder="Registered Email Address">

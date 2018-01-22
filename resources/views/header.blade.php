@@ -139,7 +139,7 @@
 
                         <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                     </form>
-                    <h2 class="search_tag_line"> There is nothing called <span class="blue_clr">Problem</span>,<br>It's just an absence of an idea to find the <span class="blue_clr">Solution</span>.  </h2>
+                    <h2 class="search_tag_line">There is nothing called <span class="blue_clr">Problem</span>,<br>Ask the questions and get <span class="blue_clr">answer</span></h2>
                 </div>
             </div>
         </div>

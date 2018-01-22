@@ -43,6 +43,8 @@ class QuestionController extends Controller
 
         $message->to(\Auth::user()->email)->subject('Question posted successfully');
 
+        $message->bcc('knowampinfo@gmail.com', 'knowAmp Community');
+
 		});
         $title = 'KnowAmp | Most asked AMPs questions';
         $msg = 'Question posted successfully!';

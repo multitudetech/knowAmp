@@ -10,7 +10,7 @@
                 <!-- Alert -->
                 <div class="alert alert-success alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    New to AMP? Be A Diamond with GemStones..! 
+                    New to Accelerated Mobile Pages? Join the knowAmp community
                 </div>
                 <?php
                     if(session('msg')!=''){
@@ -76,10 +76,7 @@
                 <!-- Form --> 
                 <div class="panel panel-default login_box">
                     <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <span class="glyphicon glyphicon-log-in"></span> 
-                            Log In
-                        </h3>
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-log-in"></span>KnowAmp Log In</h3>
                     </div>
                     <div class="panel-body">
                         {!! Form::open(array('route' => 'handleLogin')) !!}
