@@ -85,6 +85,9 @@
                         <a href="{{ url('/questions') }}">questions</a>
                     </li>
                     <li>
+                        <a href="{{ url('/news') }}">news</a>
+                    </li>
+                    <li>
                         <a href="{{ url('/aboutus') }}">about us</a>
                     </li>
                     @if(!(\Auth::user())) 

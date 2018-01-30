@@ -11,8 +11,8 @@ $_news = content_news::get();
 		</div>
 	</div>
 	<?php foreach ($_news as $d) { ?>
-		<div class="row">
-			<div class="col-md-9 col-sm-9 col-xs-9">
+		<div class="row col-md-9">
+			<div class="col-md-12 col-sm-12 col-xs-12">
 				<a href="<?php echo $d->url; ?>"><h2><?php echo $d->title; ?></h2></a>
 				<div class="col-md-3 col-sm-12 col-xs-12">
 					<img class="img-responsive" src="<?php echo $d->image_link; ?>">
@@ -25,8 +25,10 @@ $_news = content_news::get();
 				<div class="col-md-3"><?php echo $d->audit_created_date; ?></div>
 			</div>
 		</div>
-		<hr/>
+		<hr class="col-md-9" />
 	<?php } ?>
-	{{ $_news->links() }}
+	<div class="row col-md-9">
+		{{ $_news->links() }}
+	</div>
 </div>
 @endsection
